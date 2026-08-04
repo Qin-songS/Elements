@@ -1,0 +1,144 @@
+- generic [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic "知识大厦" [ref=f1e3]:
+      - generic [ref=f1e9]:
+        - strong [ref=f1e10]: 知识大厦
+        - generic [ref=f1e11]: KNOWLEDGE EDIFICE
+    - tablist "工作模式" [ref=f1e12]:
+      - tab "观察 依赖剖面" [ref=f1e13] [cursor=pointer]:
+        - generic [ref=f1e14]: 观察
+        - generic [ref=f1e15]: 依赖剖面
+      - tab "建造 挑战模式" [active] [selected] [ref=f1e16] [cursor=pointer]:
+        - generic [ref=f1e17]: 建造
+        - generic [ref=f1e18]: 挑战模式
+    - button "重置本关" [ref=f1e546] [cursor=pointer]
+  - generic [ref=f1e30]:
+    - complementary "建造路线" [ref=f1e547]:
+      - generic [ref=f1e548]:
+        - paragraph [ref=f1e549]: 建造路线 · 地下层
+        - heading "先学会什么算证明" [level=1] [ref=f1e550]
+        - paragraph [ref=f1e551]: 第一条路线不预设数字和几何。你将先建立表达、真值与推理所需的共同规则。
+        - generic [ref=f1e553]: 0 / 10 块地基
+      - generic [ref=f1e554]:
+        - paragraph [ref=f1e555]: 当前路线
+        - generic [ref=f1e556]:
+          - generic [ref=f1e557]:
+            - generic [ref=f1e558]: M.0
+            - generic [ref=f1e559]:
+              - strong [ref=f1e560]: 对象、符号与表达
+              - generic [ref=f1e561]: 规则页已就绪
+            - generic [ref=f1e562]: ✓
+          - generic [ref=f1e563]:
+            - generic [ref=f1e564]: M.1
+            - generic [ref=f1e565]:
+              - strong [ref=f1e566]: 识别可判真的命题
+              - generic [ref=f1e567]: 当前挑战
+          - generic [ref=f1e568]:
+            - generic [ref=f1e569]: M.2
+            - generic [ref=f1e570]:
+              - strong [ref=f1e571]: 真值与否定
+              - generic [ref=f1e572]: 完成上一关后解锁
+            - generic [ref=f1e573]: ⌁
+          - generic [ref=f1e574]:
+            - generic [ref=f1e575]: M.3
+            - generic [ref=f1e576]:
+              - strong [ref=f1e577]: 定义、公理与定理
+              - generic [ref=f1e578]: 尚未解锁
+            - generic [ref=f1e579]: ⌁
+          - generic [ref=f1e580]:
+            - generic [ref=f1e581]: L.1
+            - generic [ref=f1e582]:
+              - strong [ref=f1e583]: 有效推理
+              - generic [ref=f1e584]: 第 0 层入口
+            - generic [ref=f1e585]: ⌁
+      - generic [ref=f1e586]:
+        - paragraph [ref=f1e587]: 本关已解锁
+        - generic [ref=f1e588]:
+          - generic [ref=f1e589]: RULE 01 区分陈述、命令与问题
+          - generic [ref=f1e590]: RULE 02 检查对象是否已经指定
+          - generic [ref=f1e591]: RULE 03 询问表达是否具有真值
+      - generic [ref=f1e592]:
+        - paragraph [ref=f1e593]: 已经保留
+        - button "几何翼 · 原本路线 查看上一版依赖原型 →" [ref=f1e594] [cursor=pointer]:
+          - generic [ref=f1e595]:
+            - strong [ref=f1e596]: 几何翼 · 原本路线
+            - generic [ref=f1e597]: 查看上一版依赖原型
+          - generic [ref=f1e598]: →
+      - generic [ref=f1e599]:
+        - paragraph [ref=f1e600]: 本次建造
+        - generic [ref=f1e601]:
+          - generic [ref=f1e602]: 0 次核对
+          - generic [ref=f1e603]: 0 条提示
+    - main "离线思考关卡" [ref=f1e604]:
+      - generic [ref=f1e605]:
+        - generic [ref=f1e606]:
+          - paragraph [ref=f1e607]: 挑战 M.1 · 第 −1 层
+          - heading "判断哪些表达式能够成为证明目标" [level=2] [ref=f1e608]
+        - generic [ref=f1e609]: 独立思考
+      - generic [ref=f1e612]:
+        - generic [ref=f1e613]:
+          - generic [ref=f1e614]: 思考阶段
+          - strong [ref=f1e615]: 请在本子上分类并写出理由；这里不要求输入或操作。
+        - generic [ref=f1e616]:
+          - generic:
+            - paragraph: 离开屏幕完成
+            - heading "找出唯一能够直接判定真假的表达式。" [level=3]
+            - paragraph: 重点不是它恰好为真还是为假，而是它是否已经具备真值。
+          - img "四种等待分类的表达式" [ref=f1e617]:
+            - generic [ref=f1e619]: FOUNDATION GATE · WHAT CAN BE TRUE OR FALSE?
+            - generic [ref=f1e620]:
+              - generic [ref=f1e622]: 标记 A
+              - generic [ref=f1e623]: 已经显示为金色圆点
+            - generic [ref=f1e624]:
+              - generic [ref=f1e626]: A
+              - generic [ref=f1e627]: 标记 A 是金色的。
+              - generic [ref=f1e628]: 等待分类
+            - generic [ref=f1e629]:
+              - generic [ref=f1e631]: B
+              - generic [ref=f1e632]: 请把标记 A 涂成金色。
+              - generic [ref=f1e633]: 等待分类
+            - generic [ref=f1e634]:
+              - generic [ref=f1e636]: C
+              - generic [ref=f1e637]: 标记 x 是金色的。
+              - generic [ref=f1e638]: 等待分类
+            - generic [ref=f1e639]:
+              - generic [ref=f1e641]: D
+              - generic [ref=f1e642]: 标记 A 是金色的吗？
+              - generic [ref=f1e643]: 等待分类
+            - generic [ref=f1e644]: 先在纸上分类，再回来核对
+          - generic "本关步骤" [ref=f1e645]:
+            - generic [ref=f1e646]: 01 独立思考
+            - generic [ref=f1e647]: 02 核对关键点
+            - generic [ref=f1e648]: 03 对照证明
+            - generic [ref=f1e649]: 04 记录结果
+          - status
+          - generic:
+            - generic: META. M.1
+            - strong: 理解确认
+        - generic "学习操作" [ref=f1e650]:
+          - button "给我一点提示" [ref=f1e651] [cursor=pointer]
+          - button "纸上已经完成 开始核对思路" [ref=f1e652] [cursor=pointer]:
+            - generic [ref=f1e653]: 纸上已经完成
+            - strong [ref=f1e654]: 开始核对思路
+          - button "重新挑战 回到题目" [ref=f1e655] [cursor=pointer]:
+            - generic [ref=f1e656]: 重新挑战
+            - strong [ref=f1e657]: 回到题目
+    - complementary "挑战目标与核对" [ref=f1e658]:
+      - generic [ref=f1e659]:
+        - generic [ref=f1e660]:
+          - generic [ref=f1e661]: CHALLENGE M.1
+          - generic [ref=f1e662]: 思考中
+        - paragraph [ref=f1e663]: 当前目标
+        - heading "识别能够判真的命题" [level=2] [ref=f1e664]
+        - paragraph [ref=f1e665]: “在四种表达中，找出已经能够被判定为真或假的那一句。”
+        - generic [ref=f1e667]:
+          - generic [ref=f1e668]: 已知条件
+          - paragraph [ref=f1e669]: 标记 A 已经显示为金色圆点。你可以区分陈述、命令、带有未指定对象的表达式，以及问题。
+        - generic [ref=f1e670]:
+          - generic [ref=f1e671]: 渐进提示
+          - paragraph [ref=f1e672]: 提示默认隐藏。只有卡住时再打开，不影响你继续尝试。
+          - button "给我一点提示" [ref=f1e673] [cursor=pointer]
+        - generic [ref=f1e674]:
+          - button "我已完成，开始核对" [ref=f1e675] [cursor=pointer]
+          - paragraph [ref=f1e676]: 无需提交纸上的内容；核对过程完全由你掌控。
+        - paragraph [ref=f1e681]: 这一关建立的是“什么能够进入证明”的门槛。系统只负责出题和核对，分类发生在你的纸上或脑海里。

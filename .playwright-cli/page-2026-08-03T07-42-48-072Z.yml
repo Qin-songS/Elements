@@ -1,0 +1,150 @@
+- generic [active] [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic "知识大厦" [ref=f1e3]
+    - tablist "工作模式" [ref=f1e12]:
+      - tab "观察" [ref=f1e629] [cursor=pointer]
+      - tab "建造" [selected] [ref=f1e630] [cursor=pointer]
+    - generic [ref=f1e25]:
+      - button "打开建造路线" [ref=f1e631] [cursor=pointer]
+      - button "打开挑战详情" [ref=f1e634] [cursor=pointer]
+  - generic [ref=f1e30]:
+    - complementary "建造路线" [ref=f1e359]:
+      - generic [ref=f1e360]:
+        - paragraph [ref=f1e361]: 建造路线 · 第一卷
+        - heading "从地基开始" [level=1] [ref=f1e362]
+        - paragraph [ref=f1e363]: 每一关只给出目标和已解锁工具。完成验收后，新命题会成为下一关的地基。
+        - generic [ref=f1e365]: 0 / 12 个命题
+      - generic [ref=f1e366]:
+        - paragraph [ref=f1e367]: 当前路线
+        - generic [ref=f1e368]:
+          - generic [ref=f1e369]:
+            - generic [ref=f1e370]: "00"
+            - generic [ref=f1e371]:
+              - strong [ref=f1e372]: 定义与公设
+              - generic [ref=f1e373]: 地基已就绪
+            - generic [ref=f1e374]: ✓
+          - generic [ref=f1e375]:
+            - generic [ref=f1e376]: "01"
+            - generic [ref=f1e377]:
+              - strong [ref=f1e378]: 构造等边三角形
+              - generic [ref=f1e379]: 当前挑战
+          - generic [ref=f1e380]:
+            - generic [ref=f1e381]: "02"
+            - generic [ref=f1e382]:
+              - strong [ref=f1e383]: 转移一条线段
+              - generic [ref=f1e384]: 完成上一关后解锁
+            - generic [ref=f1e385]: ⌁
+          - generic [ref=f1e386]:
+            - generic [ref=f1e387]: "03"
+            - generic [ref=f1e388]:
+              - strong [ref=f1e389]: 截取相等线段
+              - generic [ref=f1e390]: 尚未解锁
+            - generic [ref=f1e391]: ⌁
+          - generic [ref=f1e392]:
+            - generic [ref=f1e393]: "04"
+            - generic [ref=f1e394]:
+              - strong [ref=f1e395]: 边角边全等
+              - generic [ref=f1e396]: 尚未解锁
+            - generic [ref=f1e397]: ⌁
+      - generic [ref=f1e398]:
+        - paragraph [ref=f1e399]: 本关已解锁
+        - generic [ref=f1e400]:
+          - generic [ref=f1e401]: POST. 1 连接两点
+          - generic [ref=f1e402]: POST. 3 以圆心和距离作圆
+          - generic [ref=f1e403]: DEF. 15 圆上的等距关系
+      - generic [ref=f1e404]:
+        - paragraph [ref=f1e405]: 本次建造
+        - generic [ref=f1e406]:
+          - generic [ref=f1e407]: 1 次核对
+          - generic [ref=f1e408]: 1 条提示
+    - main "离线思考关卡" [ref=f1e409]:
+      - generic [ref=f1e411]:
+        - paragraph [ref=f1e412]: 挑战 01 · 命题 I.1
+        - heading "在给定线段 AB 上构造等边三角形" [level=2] [ref=f1e413]
+      - generic [ref=f1e417]:
+        - strong [ref=f1e420]: 参考构造已经展开；比较它与你自己的路线是否一致。
+        - generic [ref=f1e421]:
+          - generic:
+            - paragraph: 参考构造
+            - heading "两个等距条件在交点 C 汇合。" [level=3]
+            - paragraph: 逐条对照右侧证明，找出与你的思路相同和不同的地方。
+          - img "题目给出的线段 AB" [ref=f1e422]:
+            - generic [ref=f1e659]: PROBLEM FIGURE · GIVEN SEGMENT AB
+            - generic [ref=f1e664]:
+              - generic: A
+              - generic: 已知端点
+            - generic [ref=f1e665]:
+              - generic: B
+              - generic: 已知端点
+            - generic [ref=f1e666]:
+              - generic: C
+              - generic: 两圆交点
+            - generic [ref=f1e667]: AC = AB，BC = AB，因此 AC = BC
+          - generic "本关步骤" [ref=f1e431]:
+            - generic [ref=f1e432]: 01 独立思考
+            - generic [ref=f1e433]: 02 核对关键点
+            - generic [ref=f1e434]: 03 对照证明
+            - generic [ref=f1e435]: 04 记录结果
+          - status: 参考证明已展开。现在比较它与你的思路。
+          - generic:
+            - generic: PROP. I.1
+            - strong: 理解确认
+        - generic "学习操作" [ref=f1e436]:
+          - button "再给一点提示" [ref=f1e647] [cursor=pointer]
+          - button "重新挑战 回到题目" [ref=f1e441] [cursor=pointer]:
+            - generic [ref=f1e442]: 重新挑战
+            - strong [ref=f1e443]: 回到题目
+    - complementary "挑战目标与核对" [ref=f1e444]:
+      - button "关闭挑战详情" [ref=f1e637] [cursor=pointer]: ×
+      - generic [ref=f1e445]:
+        - generic [ref=f1e446]:
+          - generic [ref=f1e447]: CHALLENGE 01
+          - generic [ref=f1e448]: 等待记录
+        - paragraph [ref=f1e449]: 当前目标
+        - heading "构造等边三角形" [level=2] [ref=f1e450]
+        - paragraph [ref=f1e451]: “在线段 AB 上找到点 C，使 AB、AC、BC 三条边相等。”
+        - generic [ref=f1e453]:
+          - generic [ref=f1e454]: 已知条件
+          - paragraph [ref=f1e455]: 有限直线段 AB 已给出。允许使用连接两点、以指定圆心和距离作圆，以及圆的等距定义。
+        - generic [ref=f1e479]:
+          - generic [ref=f1e480]: 关键点自检
+          - paragraph [ref=f1e481]: 先在脑中回答，再揭示核对。系统不要求你输入答案。
+          - generic [ref=f1e482]:
+            - generic [ref=f1e483]:
+              - paragraph [ref=f1e484]: 01 怎样保证 AC 与 AB 相等？
+              - button "揭示检查点" [ref=f1e485] [cursor=pointer]
+            - generic [ref=f1e486]:
+              - paragraph [ref=f1e487]: 02 怎样同时保证 BC 与 AB 相等？
+              - button "揭示检查点" [ref=f1e488] [cursor=pointer]
+            - generic [ref=f1e489]:
+              - paragraph [ref=f1e490]: 03 为什么最后三条边彼此相等？
+              - button "揭示检查点" [ref=f1e491] [cursor=pointer]
+        - generic [ref=f1e456]:
+          - generic [ref=f1e457]: 渐进提示
+          - paragraph [ref=f1e458]: 先不要急着画三角形。把目标改写为：找到一个同时与 A、B 距离都等于 AB 的点。
+          - button "再给一点提示" [ref=f1e648] [cursor=pointer]
+        - generic [ref=f1e530]:
+          - paragraph [ref=f1e531]: 参考证明
+          - heading "把目标转化为两个等距条件。" [level=3] [ref=f1e532]
+          - list [ref=f1e533]:
+            - listitem [ref=f1e534]: 以 A 为圆心、AB 为半径作圆。
+            - listitem [ref=f1e535]: 以 B 为圆心、BA 为半径作圆，取两圆交点 C。
+            - listitem [ref=f1e536]: 连接 AC 与 BC。由圆的定义，AC = AB 且 BC = AB。
+            - listitem [ref=f1e537]: 由“等于同量的量彼此相等”，得到 AC = BC，所以三角形 ABC 为等边三角形。
+        - generic [ref=f1e538]:
+          - generic [ref=f1e539]: 记录这次学习
+          - paragraph [ref=f1e540]: 选择最接近的情况；这里记录的是学习状态，不是考试分数。
+          - generic [ref=f1e541]:
+            - button "独立完成 没有查看提示" [disabled] [ref=f1e542]:
+              - strong [ref=f1e543]: 独立完成
+              - generic [ref=f1e544]: 没有查看提示
+            - button "提示后完成 理解了完整推导" [ref=f1e545] [cursor=pointer]:
+              - strong [ref=f1e546]: 提示后完成
+              - generic [ref=f1e547]: 理解了完整推导
+            - button "需要重做 先不解锁下一关" [ref=f1e548] [cursor=pointer]:
+              - strong [ref=f1e549]: 需要重做
+              - generic [ref=f1e550]: 先不解锁下一关
+            - button "暂未理解 保留当前关卡" [ref=f1e551] [cursor=pointer]:
+              - strong [ref=f1e552]: 暂未理解
+              - generic [ref=f1e553]: 保留当前关卡
+        - paragraph [ref=f1e467]: 系统只负责出题、提示和提供参考证明；真正的推导发生在你的纸上或脑海里。

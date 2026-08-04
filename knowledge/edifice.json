@@ -1,0 +1,333 @@
+{
+  "meta": {
+    "title": "整座知识大厦 · 全局骨架",
+    "context": "global-edifice-roadmap",
+    "description": "从元语言和推理规则出发，展示基本对象、通用结构、理论分支与应用之间的暂定依赖关系。",
+    "eyebrow": "总览 00",
+    "workspaceEyebrow": "全局剖面",
+    "workspaceTitle": "从元规则向应用层阅读",
+    "controlTitle": "可检验地基",
+    "controlNote": "关闭一条底层规则，观察哪些数学区域会失去支持。",
+    "defaultNode": "meta.statement",
+    "world": { "width": 1900, "height": 1060 }
+  },
+  "floors": [
+    { "id": 4, "y": 35, "label": "04 · 应用与跨域连接" },
+    { "id": 3, "y": 210, "label": "03 · 主要理论分支" },
+    { "id": 2, "y": 390, "label": "02 · 通用数学结构" },
+    { "id": 1, "y": 570, "label": "01 · 基本对象的构造" },
+    { "id": 0, "y": 750, "label": "00 · 公共逻辑地基" },
+    { "id": -1, "y": 930, "label": "−1 · 元语言与建造规则" }
+  ],
+  "types": [
+    { "id": "meta", "label": "元规则" },
+    { "id": "foundation", "label": "公共地基" },
+    { "id": "object", "label": "基本对象" },
+    { "id": "structure", "label": "通用结构" },
+    { "id": "theory", "label": "理论分支" },
+    { "id": "application", "label": "应用连接" }
+  ],
+  "nodes": [
+    {
+      "id": "meta.syntax", "code": "META. 0", "type": "meta", "title": "对象、符号与表达",
+      "claim": "先约定讨论哪些对象、使用哪些符号，以及哪些符号串算作表达式。",
+      "context": "这是整个项目采用的非形式元语言起点；它不是从更低数学结论推导出来的。",
+      "x": 45, "y": 955, "floor": -1, "toggleable": true, "dependsOn": [],
+      "proof": ["指定对象与符号的解释。", "给出表达式的形成规则，排除无意义的符号串。"],
+      "source": "全局路线节点。正式形式化时需要选择具体语法系统。"
+    },
+    {
+      "id": "meta.statement", "code": "META. 1", "type": "meta", "title": "命题与真值",
+      "claim": "命题是在解释固定后能够被判定为真或假的封闭陈述。",
+      "context": "第 −1 层第一条可游玩路线；先区分陈述、命令、问题和开放表达式。",
+      "x": 345, "y": 955, "floor": -1, "toggleable": true, "dependsOn": ["meta.syntax"],
+      "proof": ["检查表达是否在断言某种情况。", "检查对象是否全部指定，并询问它是否具有真值。"],
+      "source": "全局路线节点。当前建造模式从这里开始。"
+    },
+    {
+      "id": "meta.definition", "code": "META. 2", "type": "meta", "title": "定义、公理与定理",
+      "claim": "定义约定术语，公理提供起点，定理则必须由已经接受的规则推出。",
+      "context": "把知识节点按角色分开，避免把定义误当作待证明的事实。",
+      "x": 645, "y": 955, "floor": -1, "dependsOn": ["meta.syntax", "meta.statement"],
+      "proof": ["定义负责固定用语。", "公理不在当前体系内证明；定理需要依赖链。"],
+      "source": "全局路线节点，陈述为教学性工作定义。"
+    },
+    {
+      "id": "meta.inference", "code": "META. 3", "type": "meta", "title": "允许的推理规则",
+      "claim": "证明只能使用事先接受的推理规则，从已知命题得到新命题。",
+      "context": "这是知识大厦的承重规范；不同逻辑体系可以选择不同规则。",
+      "x": 945, "y": 955, "floor": -1, "toggleable": true, "dependsOn": ["meta.statement"],
+      "proof": ["列出每一种合法推理步骤。", "每一步证明都必须能追溯到其中一条规则。"],
+      "source": "全局路线节点。默认路线暂采用经典逻辑直觉。"
+    },
+    {
+      "id": "meta.proof", "code": "META. 4", "type": "meta", "title": "证明、反例与核验",
+      "claim": "证明给出可核验的推导链；反例可以否定全称主张。",
+      "context": "连接形式规则与实际学习活动，并明确参考证明只是核验工具。",
+      "x": 1245, "y": 955, "floor": -1, "dependsOn": ["meta.definition", "meta.inference"],
+      "proof": ["逐步标出每个结论所使用的前提。", "对全称陈述，单个合格反例足以说明其为假。"],
+      "source": "全局路线节点，后续会分化为直接证明、反证等方法。"
+    },
+    {
+      "id": "meta.levels", "code": "META. 5", "type": "meta", "title": "对象语言与元语言",
+      "claim": "需要区分体系内部的陈述和我们在体系外部谈论这些陈述时使用的语言。",
+      "context": "防止自指、语义与证明层级在同一句话中被混用。",
+      "x": 1545, "y": 955, "floor": -1, "dependsOn": ["meta.syntax", "meta.proof"],
+      "proof": ["标出一句话是在谈对象还是在谈表达式。", "把关于证明系统的判断放在元层处理。"],
+      "source": "全局路线节点；正式学习数理逻辑时会进一步严格化。"
+    },
+
+    {
+      "id": "logic.proposition", "code": "LOGIC. 1", "type": "foundation", "title": "命题联结与真值",
+      "claim": "否定、合取、析取和蕴含把已有命题组合为新的命题。",
+      "context": "经典命题逻辑入口；真值表是早期核验工具，不是全部语义。",
+      "x": 55, "y": 780, "floor": 0, "dependsOn": ["meta.statement", "meta.inference"],
+      "proof": ["给每个联结词约定真值条件。", "据此核验复合命题在各种情形下的真值。"],
+      "source": "全局路线节点，尚未绑定某一本教材。"
+    },
+    {
+      "id": "logic.predicate", "code": "LOGIC. 2", "type": "foundation", "title": "谓词、变量与量词",
+      "claim": "谓词含有对象位置；量词把变量约束后形成封闭命题。",
+      "context": "从开放表达式进入一阶逻辑，为数学公理的书写提供语言。",
+      "x": 355, "y": 780, "floor": 0, "dependsOn": ["meta.syntax", "meta.statement", "logic.proposition"],
+      "proof": ["区分自由变量和受约束变量。", "用全称或存在量词封闭表达式。"],
+      "source": "全局路线节点；默认采用一阶语言作为公共入口。"
+    },
+    {
+      "id": "logic.equality", "code": "LOGIC. 3", "type": "foundation", "title": "相等与代换",
+      "claim": "相等关系允许在保持真值的前提下，用相等对象彼此代换。",
+      "context": "既可以把相等作为逻辑内置符号，也可以在具体结构中定义等价关系。",
+      "x": 655, "y": 780, "floor": 0, "dependsOn": ["logic.predicate", "meta.inference"],
+      "proof": ["接受自反性与相等对象不可区分原则。", "在公式允许的位置实施代换。"],
+      "source": "全局路线节点，具体公理化方案待路线展开时选择。"
+    },
+    {
+      "id": "set.foundation", "code": "SET. 1", "type": "foundation", "title": "集合与集合公理",
+      "claim": "用成员关系组织对象，并用公理限制哪些集合可以存在。",
+      "context": "建议路线采用集合论作为数学对象的共同承载层，同时保留未来切换类型论的可能。",
+      "x": 955, "y": 780, "floor": 0, "toggleable": true, "dependsOn": ["logic.predicate", "logic.equality", "meta.definition"],
+      "proof": ["以成员关系写出集合性质。", "通过外延、分离、配对等公理逐步获得所需集合。"],
+      "source": "全局路线节点；完整 ZF/ZFC 公理将在独立路线中展开。"
+    },
+    {
+      "id": "set.relation", "code": "SET. 2", "type": "foundation", "title": "关系、函数与商",
+      "claim": "有序对和集合允许构造关系、函数、等价类与商对象。",
+      "context": "大量数学结构共享的基础接口。",
+      "x": 1255, "y": 780, "floor": 0, "dependsOn": ["set.foundation", "logic.equality"],
+      "proof": ["用有序对集合表示二元关系。", "对关系增加唯一性条件得到函数。"],
+      "source": "全局路线节点；具体构造将在集合路线中细化。"
+    },
+    {
+      "id": "logic.methods", "code": "LOGIC. 4", "type": "foundation", "title": "直接、逆否与反证",
+      "claim": "证明方法是推理规则的成组使用方式，而不是额外创造结论的捷径。",
+      "context": "暂不把数学归纳放在这里；归纳要等自然数或良基结构建立后出现。",
+      "x": 1555, "y": 780, "floor": 0, "dependsOn": ["logic.proposition", "logic.predicate", "meta.proof"],
+      "proof": ["把目标转换成对应的逻辑形式。", "逐步核验该证明策略所使用的推理规则。"],
+      "source": "全局路线节点；归纳证明被有意移动到第 1 层。"
+    },
+
+    {
+      "id": "number.natural", "code": "NUM. 1", "type": "object", "title": "自然数与 Peano 结构",
+      "claim": "自然数由零、后继与归纳原则刻画，并可在集合论中给出一个具体模型。",
+      "context": "可以选择把 Peano 公理作为独立起点，也可以在集合基础上构造自然数。",
+      "x": 90, "y": 600, "floor": 1, "dependsOn": ["set.foundation", "logic.methods"],
+      "proof": ["给出零和后继运算。", "验证 Peano 条件并建立归纳原则。"],
+      "source": "全局路线节点；具体采用冯·诺伊曼自然数只是可选实现。"
+    },
+    {
+      "id": "number.recursion", "code": "NUM. 2", "type": "object", "title": "归纳与递归",
+      "claim": "自然数的结构支持归纳证明，也支持通过初值和后继步骤定义函数。",
+      "context": "这里才正式引入数学归纳，并证明递归定义的存在唯一性。",
+      "x": 390, "y": 600, "floor": 1, "dependsOn": ["number.natural", "meta.proof"],
+      "proof": ["利用归纳原则证明覆盖全部自然数。", "利用递归定理构造加法、乘法等函数。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "number.integer", "code": "NUM. 3", "type": "object", "title": "整数",
+      "claim": "整数通过自然数有序对的等价类补入加法逆元。",
+      "context": "从计数结构扩展到可做减法的数系。",
+      "x": 690, "y": 600, "floor": 1, "dependsOn": ["number.recursion", "set.relation"],
+      "proof": ["定义有序对之间表示相同差值的等价关系。", "在等价类上定义并验证整数运算。"],
+      "source": "全局路线节点；也可采用其他等价构造。"
+    },
+    {
+      "id": "number.rational", "code": "NUM. 4", "type": "object", "title": "有理数",
+      "claim": "有理数通过整数对的等价类补入非零元素的乘法逆元。",
+      "context": "把离散整数扩展为可以精确表示比例的域。",
+      "x": 990, "y": 600, "floor": 1, "dependsOn": ["number.integer", "set.relation"],
+      "proof": ["排除零分母并定义分数等价关系。", "验证加法、乘法与次序在等价类上良定义。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "number.real", "code": "NUM. 5", "type": "object", "title": "实数与完备性",
+      "claim": "实数填补有理数中的极限缺口，并满足适当的完备性原则。",
+      "context": "可经 Dedekind 分割或 Cauchy 序列构造，二者应得到同构的完备有序域。",
+      "x": 1290, "y": 600, "floor": 1, "dependsOn": ["number.rational", "set.foundation", "logic.methods"],
+      "proof": ["选择一种有理数完备化构造。", "定义运算、次序并证明最小上界或等价完备性。"],
+      "source": "全局路线节点；构造路线将在后续由学习者选择。"
+    },
+    {
+      "id": "number.complex", "code": "NUM. 6", "type": "object", "title": "复数",
+      "claim": "复数把实数扩展为包含虚数单位的代数闭包方向上的数系。",
+      "context": "最初可构造为实数有序对，并在其上定义复加法和复乘法。",
+      "x": 1590, "y": 600, "floor": 1, "dependsOn": ["number.real", "set.relation"],
+      "proof": ["把复数定义为实数对。", "验证运算形成域并满足 i² = −1。"],
+      "source": "全局路线节点；代数闭性需要更高层理论。"
+    },
+
+    {
+      "id": "structure.algebra", "code": "STR. A", "type": "structure", "title": "代数结构",
+      "claim": "运算及其公理抽取出幺半群、群、环、域等共同结构。",
+      "context": "数系提供首批实例，结构定义本身则可作用于任意集合。",
+      "x": 65, "y": 420, "floor": 2, "dependsOn": ["set.relation", "number.rational"],
+      "proof": ["指定载体集合和运算。", "逐条核验结合、单位元、逆元等公理。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "structure.order", "code": "STR. O", "type": "structure", "title": "次序结构",
+      "claim": "偏序、全序与格描述对象之间可比较和取界的方式。",
+      "context": "既覆盖自然数、实数的次序，也覆盖集合包含等非数值例子。",
+      "x": 365, "y": 420, "floor": 2, "dependsOn": ["set.relation", "number.natural"],
+      "proof": ["定义并核验自反、反对称和传递性。", "根据需要增加全序、上确界或格运算。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "structure.discrete", "code": "STR. D", "type": "structure", "title": "图、树与组合结构",
+      "claim": "有限或可数对象之间的连接关系形成离散数学的通用结构。",
+      "context": "为组合计数、算法和理论计算机科学提供直接对象。",
+      "x": 665, "y": 420, "floor": 2, "dependsOn": ["set.relation", "number.natural"],
+      "proof": ["用顶点集合和边关系定义图。", "增加连通、无环等条件得到树和其他结构。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "structure.linear", "code": "STR. L", "type": "structure", "title": "线性结构",
+      "claim": "向量空间和线性映射抽取加法与数乘保持结构的共同规律。",
+      "context": "可以先在有理数上学习，再扩展到实数、复数及一般域。",
+      "x": 965, "y": 420, "floor": 2, "dependsOn": ["structure.algebra", "number.rational"],
+      "proof": ["选择标量域和向量集合。", "验证向量加法、数乘及线性映射公理。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "structure.space", "code": "STR. T", "type": "structure", "title": "拓扑、空间与距离",
+      "claim": "拓扑和度量描述邻近、连续与收敛，而不依赖具体坐标表示。",
+      "context": "拓扑可只依赖集合；度量通常取非负实数值，因此依赖实数。",
+      "x": 1265, "y": 420, "floor": 2, "dependsOn": ["set.foundation", "number.real"],
+      "proof": ["用开集族定义拓扑。", "加入距离函数并核验度量公理可得到度量空间。"],
+      "source": "全局路线节点；拓扑和度量将在展开时分成两条路线。"
+    },
+    {
+      "id": "structure.measure", "code": "STR. M", "type": "structure", "title": "测度与极限结构",
+      "claim": "σ-代数、测度和各种极限结构允许严格描述大小、积分与无限过程。",
+      "context": "为现代分析和测度论概率提供共同接口。",
+      "x": 1565, "y": 420, "floor": 2, "dependsOn": ["set.foundation", "number.real", "structure.space"],
+      "proof": ["选取可测集合族并验证对可数运算封闭。", "定义满足可数可加性的测度。"],
+      "source": "全局路线节点；“极限结构”将进一步拆成序列、网与完备化。"
+    },
+
+    {
+      "id": "theory.number", "code": "TH. N", "type": "theory", "title": "数论",
+      "claim": "研究整数的整除、素数、同余及其更深结构。",
+      "context": "从自然数与归纳开始，并不断借用代数和分析工具。",
+      "x": 25, "y": 240, "floor": 3, "dependsOn": ["number.natural", "number.recursion", "structure.algebra"],
+      "proof": ["以整数或自然数为主要对象。", "沿初等、代数与解析方向分化。"],
+      "source": "全局路线节点，表示学科入口而非单一命题。"
+    },
+    {
+      "id": "theory.algebra", "code": "TH. A", "type": "theory", "title": "抽象代数",
+      "claim": "系统研究代数结构、同态、不变量和结构分类。",
+      "context": "群、环、域和模等路线会在这里形成独立塔翼。",
+      "x": 255, "y": 240, "floor": 3, "dependsOn": ["structure.algebra", "set.relation"],
+      "proof": ["固定一种结构类别。", "研究保持结构的映射、商和分解。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "theory.linear", "code": "TH. L", "type": "theory", "title": "线性代数",
+      "claim": "研究向量空间、线性映射、矩阵、特征结构与分解。",
+      "context": "既是独立理论，也是分析、物理、优化和 AI 的关键桥梁。",
+      "x": 485, "y": 240, "floor": 3, "dependsOn": ["structure.linear", "number.real"],
+      "proof": ["从有限维空间和线性方程组开始。", "逐步进入基、维数、行列式与谱结构。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "theory.analysis", "code": "TH. R", "type": "theory", "title": "分析",
+      "claim": "以极限、连续、微分和积分研究变化与无限过程。",
+      "context": "实数完备性、空间结构与次序结构共同支撑严谨分析。",
+      "x": 715, "y": 240, "floor": 3, "dependsOn": ["number.real", "structure.order", "structure.space"],
+      "proof": ["先建立序列与函数极限。", "再发展连续、微积分与更一般的分析分支。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "theory.geometry", "code": "TH. G", "type": "theory", "title": "几何与拓扑",
+      "claim": "几何既可从独立公理综合发展，也可借助实数、线性结构和拓扑解析发展。",
+      "context": "现有《几何原本》原型被保留为这座塔翼中的一条早期综合路线。",
+      "x": 945, "y": 240, "floor": 3, "dependsOn": ["logic.methods", "structure.linear", "structure.space"],
+      "proof": ["综合路线从几何原始概念与公设出发。", "解析路线用坐标、线性和拓扑结构描述空间。"],
+      "source": "全局路线节点；可从左侧切换进入“几何翼”原型。"
+    },
+    {
+      "id": "theory.discrete", "code": "TH. D", "type": "theory", "title": "离散数学",
+      "claim": "研究组合对象、图、计数、离散概率和有限结构。",
+      "context": "与算法路线紧密交织，可在实数分析之前形成大量完整关卡。",
+      "x": 1175, "y": 240, "floor": 3, "dependsOn": ["structure.discrete", "logic.methods"],
+      "proof": ["从有限集合和计数开始。", "发展图论、组合设计与离散优化。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "theory.probability", "code": "TH. P", "type": "theory", "title": "概率与统计",
+      "claim": "有限概率可较早建立，测度概率则依赖实数、测度与分析。",
+      "context": "在大厦中拆成早期有限路线和后期测度路线，避免制造不必要的单一路径。",
+      "x": 1405, "y": 240, "floor": 3, "dependsOn": ["structure.discrete", "structure.measure", "theory.analysis"],
+      "proof": ["先在有限样本空间定义概率。", "再借助测度推广到无限样本空间并发展统计推断。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "theory.computation", "code": "TH. C", "type": "theory", "title": "可计算性与复杂性",
+      "claim": "形式化算法能计算什么，以及完成计算需要多少资源。",
+      "context": "理论计算机科学从逻辑、自然数和离散结构较早分叉，不只是顶层应用。",
+      "x": 1635, "y": 240, "floor": 3, "dependsOn": ["number.natural", "structure.discrete", "meta.levels"],
+      "proof": ["建立一种等价的计算模型。", "研究可判定性、归约和时间空间复杂度。"],
+      "source": "全局路线节点。"
+    },
+
+    {
+      "id": "app.algorithms", "code": "APP. ALG", "type": "application", "title": "算法与数据结构",
+      "claim": "把离散结构和可计算过程组织为可执行、可分析的方法。",
+      "context": "连接理论计算机科学与实际程序设计。",
+      "x": 125, "y": 65, "floor": 4, "dependsOn": ["theory.discrete", "theory.computation"],
+      "proof": ["选择数据表示与操作。", "证明正确性并分析资源复杂度。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "app.optimization", "code": "APP. OPT", "type": "application", "title": "优化与数值计算",
+      "claim": "用分析、线性结构和算法寻找近似解或最优解。",
+      "context": "为科学计算、工程和机器学习提供桥梁。",
+      "x": 455, "y": 65, "floor": 4, "dependsOn": ["theory.analysis", "theory.linear", "app.algorithms"],
+      "proof": ["定义目标、约束与误差。", "证明算法收敛性或给出可靠的误差界。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "app.physics", "code": "APP. PHY", "type": "application", "title": "数学物理",
+      "claim": "用几何、分析、线性结构和概率刻画自然规律。",
+      "context": "不同物理分支需要的数学依赖不同，因此这里是入口而不是单一路线。",
+      "x": 785, "y": 65, "floor": 4, "dependsOn": ["theory.analysis", "theory.linear", "theory.geometry", "theory.probability"],
+      "proof": ["把经验对象抽象成状态与规律。", "从数学模型推出可检验预测并与实验比较。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "app.cs", "code": "APP. CS", "type": "application", "title": "计算机科学",
+      "claim": "计算理论、算法、语言、系统和信息结构共同构成计算机科学。",
+      "context": "其中理论部分已经在第 3 层分叉，系统部分则继续连接工程约束。",
+      "x": 1115, "y": 65, "floor": 4, "dependsOn": ["theory.computation", "app.algorithms", "logic.predicate"],
+      "proof": ["从计算模型和算法建立理论骨架。", "再连接程序语言、体系结构、网络与系统。"],
+      "source": "全局路线节点。"
+    },
+    {
+      "id": "app.ai", "code": "APP. AI", "type": "application", "title": "机器学习与人工智能",
+      "claim": "AI 汇合线性代数、概率、优化、算法与计算系统。",
+      "context": "它是多条路线交汇后的上层区域，而不是一条孤立学科目录。",
+      "x": 1445, "y": 65, "floor": 4, "dependsOn": ["theory.linear", "theory.probability", "app.optimization", "app.algorithms", "app.cs"],
+      "proof": ["用数据、模型和目标函数表达任务。", "通过优化学习参数，并用概率和算法分析泛化与计算代价。"],
+      "source": "全局路线节点；后续可分为学习理论、模型、工程与认知路线。"
+    }
+  ]
+}

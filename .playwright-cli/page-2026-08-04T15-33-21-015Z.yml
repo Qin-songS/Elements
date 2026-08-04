@@ -1,0 +1,144 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic "知识大厦" [ref=e3]:
+      - generic [ref=e9]:
+        - strong [ref=e10]: 知识大厦
+        - generic [ref=e11]: KNOWLEDGE EDIFICE
+    - tablist "工作模式" [ref=e12]:
+      - tab "观察 依赖剖面" [ref=e13] [cursor=pointer]:
+        - generic [ref=e14]: 观察
+        - generic [ref=e15]: 依赖剖面
+      - tab "建造 挑战模式" [active] [selected] [ref=e16] [cursor=pointer]:
+        - generic [ref=e17]: 建造
+        - generic [ref=e18]: 挑战模式
+    - button "重置本关" [ref=e808] [cursor=pointer]
+  - generic [ref=e30]:
+    - complementary "建造路线" [ref=e809]:
+      - generic [ref=e810]:
+        - paragraph [ref=e811]: 建造路线 · 地下层
+        - heading "先学会什么算证明" [level=1] [ref=e812]
+        - paragraph [ref=e813]: 第一条路线不预设数字和几何。你将先建立表达、真值与推理所需的共同规则。
+        - generic [ref=e815]: 0 / 10 块地基
+      - generic [ref=e816]:
+        - paragraph [ref=e817]: 当前路线
+        - generic [ref=e818]:
+          - generic [ref=e819]:
+            - generic [ref=e820]: M.0
+            - generic [ref=e821]:
+              - strong [ref=e822]: 对象、符号与表达
+              - generic [ref=e823]: 规则页已就绪
+            - generic [ref=e824]: ✓
+          - generic [ref=e825]:
+            - generic [ref=e826]: M.1
+            - generic [ref=e827]:
+              - strong [ref=e828]: 识别可判真的命题
+              - generic [ref=e829]: 当前挑战
+          - generic [ref=e830]:
+            - generic [ref=e831]: M.2
+            - generic [ref=e832]:
+              - strong [ref=e833]: 真值与否定
+              - generic [ref=e834]: 完成上一关后解锁
+            - generic [ref=e835]: ⌁
+          - generic [ref=e836]:
+            - generic [ref=e837]: M.3
+            - generic [ref=e838]:
+              - strong [ref=e839]: 定义、公理与定理
+              - generic [ref=e840]: 尚未解锁
+            - generic [ref=e841]: ⌁
+          - generic [ref=e842]:
+            - generic [ref=e843]: L.1
+            - generic [ref=e844]:
+              - strong [ref=e845]: 有效推理
+              - generic [ref=e846]: 第 0 层入口
+            - generic [ref=e847]: ⌁
+      - generic [ref=e848]:
+        - paragraph [ref=e849]: 本关已解锁
+        - generic [ref=e850]:
+          - generic [ref=e851]: RULE 01 区分陈述、命令与问题
+          - generic [ref=e852]: RULE 02 检查对象是否已经指定
+          - generic [ref=e853]: RULE 03 询问表达是否具有真值
+      - generic [ref=e854]:
+        - paragraph [ref=e855]: 已经保留
+        - button "几何翼 · 原本路线 查看上一版依赖原型 →" [ref=e856] [cursor=pointer]:
+          - generic [ref=e857]:
+            - strong [ref=e858]: 几何翼 · 原本路线
+            - generic [ref=e859]: 查看上一版依赖原型
+          - generic [ref=e860]: →
+      - generic [ref=e861]:
+        - paragraph [ref=e862]: 本次建造
+        - generic [ref=e863]:
+          - generic [ref=e864]: 0 次核对
+          - generic [ref=e865]: 0 条提示
+    - main "离线思考关卡" [ref=e866]:
+      - generic [ref=e867]:
+        - generic [ref=e868]:
+          - paragraph [ref=e869]: 挑战 M.1 · 第 −1 层
+          - heading "判断哪些表达式能够成为证明目标" [level=2] [ref=e870]
+        - generic [ref=e871]: 独立思考
+      - generic [ref=e874]:
+        - generic [ref=e875]:
+          - generic [ref=e876]: 思考阶段
+          - strong [ref=e877]: 请在本子上分类并写出理由；这里不要求输入或操作。
+        - generic [ref=e878]:
+          - generic:
+            - paragraph: 离开屏幕完成
+            - heading "找出唯一能够直接判定真假的表达式。" [level=3]
+            - paragraph: 重点不是它恰好为真还是为假，而是它是否已经具备真值。
+          - img "四种等待分类的表达式" [ref=e879]:
+            - generic [ref=e881]: FOUNDATION GATE · WHAT CAN BE TRUE OR FALSE?
+            - generic [ref=e882]:
+              - generic [ref=e884]: 标记 A
+              - generic [ref=e885]: 已经显示为金色圆点
+            - generic [ref=e886]:
+              - generic [ref=e888]: A
+              - generic [ref=e889]: 标记 A 是金色的。
+              - generic [ref=e890]: 陈述 · 对象已指定
+            - generic [ref=e891]:
+              - generic [ref=e893]: B
+              - generic [ref=e894]: 请把标记 A 涂成金色。
+              - generic [ref=e895]: 命令
+            - generic [ref=e896]:
+              - generic [ref=e898]: C
+              - generic [ref=e899]: 标记 x 是金色的。
+              - generic [ref=e900]: 对象 x 尚未指定
+            - generic [ref=e901]:
+              - generic [ref=e903]: D
+              - generic [ref=e904]: 标记 A 是金色的吗？
+              - generic [ref=e905]: 问题
+            - generic [ref=e906]: 先在纸上分类，再回来核对
+          - generic "本关步骤" [ref=e907]:
+            - generic [ref=e908]: 01 独立思考
+            - generic [ref=e909]: 02 核对关键点
+            - generic [ref=e910]: 03 对照证明
+            - generic [ref=e911]: 04 记录结果
+          - status
+          - generic:
+            - generic: META. M.1
+            - strong: 理解确认
+        - generic "学习操作" [ref=e912]:
+          - button "给我一点提示" [ref=e913] [cursor=pointer]
+          - button "纸上已经完成 开始核对思路" [ref=e914] [cursor=pointer]:
+            - generic [ref=e915]: 纸上已经完成
+            - strong [ref=e916]: 开始核对思路
+          - button "重新挑战 回到题目" [ref=e917] [cursor=pointer]:
+            - generic [ref=e918]: 重新挑战
+            - strong [ref=e919]: 回到题目
+    - complementary "挑战目标与核对" [ref=e920]:
+      - generic [ref=e921]:
+        - generic [ref=e922]:
+          - generic [ref=e923]: CHALLENGE M.1
+          - generic [ref=e924]: 思考中
+        - paragraph [ref=e925]: 当前目标
+        - heading "识别能够判真的命题" [level=2] [ref=e926]
+        - paragraph [ref=e927]: “在四种表达中，找出已经能够被判定为真或假的那一句。”
+        - generic [ref=e929]:
+          - generic [ref=e930]: 已知条件
+          - paragraph [ref=e931]: 标记 A 已经显示为金色圆点。你可以区分陈述、命令、带有未指定对象的表达式，以及问题。
+        - generic [ref=e932]:
+          - generic [ref=e933]: 渐进提示
+          - paragraph [ref=e934]: 提示默认隐藏。只有卡住时再打开，不影响你继续尝试。
+          - button "给我一点提示" [ref=e935] [cursor=pointer]
+        - generic [ref=e936]:
+          - button "我已完成，开始核对" [ref=e937] [cursor=pointer]
+          - paragraph [ref=e938]: 无需提交纸上的内容；核对过程完全由你掌控。
+        - paragraph [ref=e943]: 这一关建立的是“什么能够进入证明”的门槛。系统只负责出题和核对，分类发生在你的纸上或脑海里。

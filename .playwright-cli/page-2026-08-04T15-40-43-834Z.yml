@@ -1,0 +1,416 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - generic "知识大厦" [ref=f3e3]
+    - tablist "工作模式" [ref=f3e9]:
+      - tab "观察" [selected] [ref=f3e10] [cursor=pointer]
+      - tab "建造" [ref=f3e12] [cursor=pointer]
+    - generic [ref=f3e14]:
+      - button "打开筛选面板" [ref=f3e15] [cursor=pointer]
+      - button "显示全部知识节点" [ref=f3e18] [cursor=pointer]
+      - button "打开节点详情" [ref=f3e21] [cursor=pointer]
+  - generic [ref=f3e24]:
+    - complementary "知识图谱控制" [ref=f3e25]:
+      - region "观察范围" [ref=f3e26]:
+        - button "整座大厦 全局骨架" [pressed] [ref=f3e27] [cursor=pointer]:
+          - generic [ref=f3e28]: 整座大厦
+          - generic [ref=f3e29]: 全局骨架
+        - button "几何翼 现有原型" [ref=f3e30] [cursor=pointer]:
+          - generic [ref=f3e31]: 几何翼
+          - generic [ref=f3e32]: 现有原型
+      - generic [ref=f3e33]:
+        - paragraph [ref=f3e34]: 总览 00
+        - heading "整座知识大厦" [level=1] [ref=f3e35]
+        - paragraph [ref=f3e36]: 从元语言和推理规则出发，展示基本对象、通用结构、理论分支与应用之间的暂定依赖关系。
+        - generic [ref=f3e37]:
+          - generic [ref=f3e38]: 37 个节点
+          - generic [ref=f3e39]: 87 条依赖
+      - generic [ref=f3e40]:
+        - generic [ref=f3e41]:
+          - generic [ref=f3e42]:
+            - paragraph [ref=f3e43]: 地基控制
+            - heading "可检验地基" [level=2] [ref=f3e44]
+          - button "全部恢复" [ref=f3e45] [cursor=pointer]
+        - paragraph [ref=f3e46]: 关闭一条底层规则，观察哪些数学区域会失去支持。
+        - generic [ref=f3e47]:
+          - generic [ref=f3e48]:
+            - generic "对象、符号与表达" [ref=f3e49]: META. 0 · 对象、符号与表达
+            - switch "启用对象、符号与表达" [checked] [ref=f3e50] [cursor=pointer]
+          - generic [ref=f3e51]:
+            - generic "命题与真值" [ref=f3e52]: META. 1 · 命题与真值
+            - switch "启用命题与真值" [checked] [ref=f3e53] [cursor=pointer]
+          - generic [ref=f3e54]:
+            - generic "允许的推理规则" [ref=f3e55]: META. 3 · 允许的推理规则
+            - switch "启用允许的推理规则" [checked] [ref=f3e56] [cursor=pointer]
+          - generic [ref=f3e57]:
+            - generic "集合与集合公理" [ref=f3e58]: SET. 1 · 集合与集合公理
+            - switch "启用集合与集合公理" [checked] [ref=f3e59] [cursor=pointer]
+      - generic [ref=f3e60]:
+        - generic [ref=f3e62]:
+          - paragraph [ref=f3e63]: 显示范围
+          - heading "知识类型" [level=2] [ref=f3e64]
+        - generic [ref=f3e65]:
+          - generic [ref=f3e66]:
+            - generic [ref=f3e67]: 元规则 · 6
+            - checkbox "显示元规则" [checked] [ref=f3e68] [cursor=pointer]
+          - generic [ref=f3e69]:
+            - generic [ref=f3e70]: 公共地基 · 6
+            - checkbox "显示公共地基" [checked] [ref=f3e71] [cursor=pointer]
+          - generic [ref=f3e72]:
+            - generic [ref=f3e73]: 基本对象 · 6
+            - checkbox "显示基本对象" [checked] [ref=f3e74] [cursor=pointer]
+          - generic [ref=f3e75]:
+            - generic [ref=f3e76]: 通用结构 · 6
+            - checkbox "显示通用结构" [checked] [ref=f3e77] [cursor=pointer]
+          - generic [ref=f3e78]:
+            - generic [ref=f3e79]: 理论分支 · 8
+            - checkbox "显示理论分支" [checked] [ref=f3e80] [cursor=pointer]
+          - generic [ref=f3e81]:
+            - generic [ref=f3e82]: 应用连接 · 5
+            - checkbox "显示应用连接" [checked] [ref=f3e83] [cursor=pointer]
+      - generic [ref=f3e84]:
+        - paragraph [ref=f3e85]: 结构状态
+        - generic [ref=f3e88]:
+          - strong [ref=f3e89]: 结构完整
+          - paragraph [ref=f3e90]: 所有演示节点都有可追溯的地基。
+    - main "知识依赖图" [ref=f3e91]:
+      - generic [ref=f3e92]:
+        - generic [ref=f3e93]:
+          - paragraph [ref=f3e94]: 全局剖面
+          - heading "从元规则向应用层阅读" [level=2] [ref=f3e95]
+        - generic "图例" [ref=f3e96]: 严格依赖
+      - generic [ref=f3e99]:
+        - generic [ref=f3e100]:
+          - generic [ref=f3e101]:
+            - generic [ref=f3e102]: 04 · 应用与跨域连接
+            - generic [ref=f3e104]: 03 · 主要理论分支
+            - generic [ref=f3e106]: 02 · 通用数学结构
+            - generic [ref=f3e108]: 01 · 基本对象的构造
+            - generic [ref=f3e110]: 00 · 公共逻辑地基
+            - generic [ref=f3e112]: −1 · 元语言与建造规则
+          - generic [ref=f3e202]:
+            - button "元规则：对象、符号与表达" [ref=f3e203] [cursor=pointer]:
+              - generic [ref=f3e204]:
+                - generic [ref=f3e205]: META. 0
+                - generic [ref=f3e206]: 元规则
+              - generic [ref=f3e207]: 对象、符号与表达
+              - generic [ref=f3e208]:
+                - generic [ref=f3e209]: 第 −1 层
+                - generic [ref=f3e210]: 0 前提
+            - button "元规则：命题与真值" [ref=f3e211] [cursor=pointer]:
+              - generic [ref=f3e212]:
+                - generic [ref=f3e213]: META. 1
+                - generic [ref=f3e214]: 元规则
+              - generic [ref=f3e215]: 命题与真值
+              - generic [ref=f3e216]:
+                - generic [ref=f3e217]: 第 −1 层
+                - generic [ref=f3e218]: 1 前提
+            - button "元规则：定义、公理与定理" [ref=f3e219] [cursor=pointer]:
+              - generic [ref=f3e220]:
+                - generic [ref=f3e221]: META. 2
+                - generic [ref=f3e222]: 元规则
+              - generic [ref=f3e223]: 定义、公理与定理
+              - generic [ref=f3e224]:
+                - generic [ref=f3e225]: 第 −1 层
+                - generic [ref=f3e226]: 2 前提
+            - button "元规则：允许的推理规则" [ref=f3e227] [cursor=pointer]:
+              - generic [ref=f3e228]:
+                - generic [ref=f3e229]: META. 3
+                - generic [ref=f3e230]: 元规则
+              - generic [ref=f3e231]: 允许的推理规则
+              - generic [ref=f3e232]:
+                - generic [ref=f3e233]: 第 −1 层
+                - generic [ref=f3e234]: 1 前提
+            - button "元规则：证明、反例与核验" [ref=f3e235] [cursor=pointer]:
+              - generic [ref=f3e236]:
+                - generic [ref=f3e237]: META. 4
+                - generic [ref=f3e238]: 元规则
+              - generic [ref=f3e239]: 证明、反例与核验
+              - generic [ref=f3e240]:
+                - generic [ref=f3e241]: 第 −1 层
+                - generic [ref=f3e242]: 2 前提
+            - button "元规则：对象语言与元语言" [ref=f3e243] [cursor=pointer]:
+              - generic [ref=f3e244]:
+                - generic [ref=f3e245]: META. 5
+                - generic [ref=f3e246]: 元规则
+              - generic [ref=f3e247]: 对象语言与元语言
+              - generic [ref=f3e248]:
+                - generic [ref=f3e249]: 第 −1 层
+                - generic [ref=f3e250]: 2 前提
+            - button "公共地基：命题联结与真值" [ref=f3e251] [cursor=pointer]:
+              - generic [ref=f3e252]:
+                - generic [ref=f3e253]: LOGIC. 1
+                - generic [ref=f3e254]: 公共地基
+              - generic [ref=f3e255]: 命题联结与真值
+              - generic [ref=f3e256]:
+                - generic [ref=f3e257]: 第 00 层
+                - generic [ref=f3e258]: 2 前提
+            - button "公共地基：谓词、变量与量词" [ref=f3e259] [cursor=pointer]:
+              - generic [ref=f3e260]:
+                - generic [ref=f3e261]: LOGIC. 2
+                - generic [ref=f3e262]: 公共地基
+              - generic [ref=f3e263]: 谓词、变量与量词
+              - generic [ref=f3e264]:
+                - generic [ref=f3e265]: 第 00 层
+                - generic [ref=f3e266]: 3 前提
+            - button "公共地基：相等与代换" [ref=f3e267] [cursor=pointer]:
+              - generic [ref=f3e268]:
+                - generic [ref=f3e269]: LOGIC. 3
+                - generic [ref=f3e270]: 公共地基
+              - generic [ref=f3e271]: 相等与代换
+              - generic [ref=f3e272]:
+                - generic [ref=f3e273]: 第 00 层
+                - generic [ref=f3e274]: 2 前提
+            - button "公共地基：集合与集合公理" [ref=f3e275] [cursor=pointer]:
+              - generic [ref=f3e276]:
+                - generic [ref=f3e277]: SET. 1
+                - generic [ref=f3e278]: 公共地基
+              - generic [ref=f3e279]: 集合与集合公理
+              - generic [ref=f3e280]:
+                - generic [ref=f3e281]: 第 00 层
+                - generic [ref=f3e282]: 3 前提
+            - button "公共地基：关系、函数与商" [ref=f3e283] [cursor=pointer]:
+              - generic [ref=f3e284]:
+                - generic [ref=f3e285]: SET. 2
+                - generic [ref=f3e286]: 公共地基
+              - generic [ref=f3e287]: 关系、函数与商
+              - generic [ref=f3e288]:
+                - generic [ref=f3e289]: 第 00 层
+                - generic [ref=f3e290]: 2 前提
+            - button "公共地基：直接、逆否与反证" [ref=f3e291] [cursor=pointer]:
+              - generic [ref=f3e292]:
+                - generic [ref=f3e293]: LOGIC. 4
+                - generic [ref=f3e294]: 公共地基
+              - generic [ref=f3e295]: 直接、逆否与反证
+              - generic [ref=f3e296]:
+                - generic [ref=f3e297]: 第 00 层
+                - generic [ref=f3e298]: 3 前提
+            - button "基本对象：自然数与 Peano 结构" [ref=f3e299] [cursor=pointer]:
+              - generic [ref=f3e300]:
+                - generic [ref=f3e301]: NUM. 1
+                - generic [ref=f3e302]: 基本对象
+              - generic [ref=f3e303]: 自然数与 Peano 结构
+              - generic [ref=f3e304]:
+                - generic [ref=f3e305]: 第 01 层
+                - generic [ref=f3e306]: 2 前提
+            - button "基本对象：归纳与递归" [ref=f3e307] [cursor=pointer]:
+              - generic [ref=f3e308]:
+                - generic [ref=f3e309]: NUM. 2
+                - generic [ref=f3e310]: 基本对象
+              - generic [ref=f3e311]: 归纳与递归
+              - generic [ref=f3e312]:
+                - generic [ref=f3e313]: 第 01 层
+                - generic [ref=f3e314]: 2 前提
+            - button "基本对象：整数" [ref=f3e315] [cursor=pointer]:
+              - generic [ref=f3e316]:
+                - generic [ref=f3e317]: NUM. 3
+                - generic [ref=f3e318]: 基本对象
+              - generic [ref=f3e319]: 整数
+              - generic [ref=f3e320]:
+                - generic [ref=f3e321]: 第 01 层
+                - generic [ref=f3e322]: 2 前提
+            - button "基本对象：有理数" [ref=f3e323] [cursor=pointer]:
+              - generic [ref=f3e324]:
+                - generic [ref=f3e325]: NUM. 4
+                - generic [ref=f3e326]: 基本对象
+              - generic [ref=f3e327]: 有理数
+              - generic [ref=f3e328]:
+                - generic [ref=f3e329]: 第 01 层
+                - generic [ref=f3e330]: 2 前提
+            - button "基本对象：实数与完备性" [ref=f3e331] [cursor=pointer]:
+              - generic [ref=f3e332]:
+                - generic [ref=f3e333]: NUM. 5
+                - generic [ref=f3e334]: 基本对象
+              - generic [ref=f3e335]: 实数与完备性
+              - generic [ref=f3e336]:
+                - generic [ref=f3e337]: 第 01 层
+                - generic [ref=f3e338]: 3 前提
+            - button "基本对象：复数" [ref=f3e339] [cursor=pointer]:
+              - generic [ref=f3e340]:
+                - generic [ref=f3e341]: NUM. 6
+                - generic [ref=f3e342]: 基本对象
+              - generic [ref=f3e343]: 复数
+              - generic [ref=f3e344]:
+                - generic [ref=f3e345]: 第 01 层
+                - generic [ref=f3e346]: 2 前提
+            - button "通用结构：代数结构" [ref=f3e347] [cursor=pointer]:
+              - generic [ref=f3e348]:
+                - generic [ref=f3e349]: STR. A
+                - generic [ref=f3e350]: 通用结构
+              - generic [ref=f3e351]: 代数结构
+              - generic [ref=f3e352]:
+                - generic [ref=f3e353]: 第 02 层
+                - generic [ref=f3e354]: 2 前提
+            - button "通用结构：次序结构" [ref=f3e355] [cursor=pointer]:
+              - generic [ref=f3e356]:
+                - generic [ref=f3e357]: STR. O
+                - generic [ref=f3e358]: 通用结构
+              - generic [ref=f3e359]: 次序结构
+              - generic [ref=f3e360]:
+                - generic [ref=f3e361]: 第 02 层
+                - generic [ref=f3e362]: 2 前提
+            - button "通用结构：图、树与组合结构" [ref=f3e363] [cursor=pointer]:
+              - generic [ref=f3e364]:
+                - generic [ref=f3e365]: STR. D
+                - generic [ref=f3e366]: 通用结构
+              - generic [ref=f3e367]: 图、树与组合结构
+              - generic [ref=f3e368]:
+                - generic [ref=f3e369]: 第 02 层
+                - generic [ref=f3e370]: 2 前提
+            - button "通用结构：线性结构" [ref=f3e371] [cursor=pointer]:
+              - generic [ref=f3e372]:
+                - generic [ref=f3e373]: STR. L
+                - generic [ref=f3e374]: 通用结构
+              - generic [ref=f3e375]: 线性结构
+              - generic [ref=f3e376]:
+                - generic [ref=f3e377]: 第 02 层
+                - generic [ref=f3e378]: 2 前提
+            - button "通用结构：拓扑、空间与距离" [ref=f3e379] [cursor=pointer]:
+              - generic [ref=f3e380]:
+                - generic [ref=f3e381]: STR. T
+                - generic [ref=f3e382]: 通用结构
+              - generic [ref=f3e383]: 拓扑、空间与距离
+              - generic [ref=f3e384]:
+                - generic [ref=f3e385]: 第 02 层
+                - generic [ref=f3e386]: 2 前提
+            - button "通用结构：测度与极限结构" [ref=f3e387] [cursor=pointer]:
+              - generic [ref=f3e388]:
+                - generic [ref=f3e389]: STR. M
+                - generic [ref=f3e390]: 通用结构
+              - generic [ref=f3e391]: 测度与极限结构
+              - generic [ref=f3e392]:
+                - generic [ref=f3e393]: 第 02 层
+                - generic [ref=f3e394]: 3 前提
+            - button "理论分支：数论" [ref=f3e395] [cursor=pointer]:
+              - generic [ref=f3e396]:
+                - generic [ref=f3e397]: TH. N
+                - generic [ref=f3e398]: 理论分支
+              - generic [ref=f3e399]: 数论
+              - generic [ref=f3e400]:
+                - generic [ref=f3e401]: 第 03 层
+                - generic [ref=f3e402]: 3 前提
+            - button "理论分支：抽象代数" [ref=f3e403] [cursor=pointer]:
+              - generic [ref=f3e404]:
+                - generic [ref=f3e405]: TH. A
+                - generic [ref=f3e406]: 理论分支
+              - generic [ref=f3e407]: 抽象代数
+              - generic [ref=f3e408]:
+                - generic [ref=f3e409]: 第 03 层
+                - generic [ref=f3e410]: 2 前提
+            - button "理论分支：线性代数" [ref=f3e411] [cursor=pointer]:
+              - generic [ref=f3e412]:
+                - generic [ref=f3e413]: TH. L
+                - generic [ref=f3e414]: 理论分支
+              - generic [ref=f3e415]: 线性代数
+              - generic [ref=f3e416]:
+                - generic [ref=f3e417]: 第 03 层
+                - generic [ref=f3e418]: 2 前提
+            - button "理论分支：分析" [ref=f3e419] [cursor=pointer]:
+              - generic [ref=f3e420]:
+                - generic [ref=f3e421]: TH. R
+                - generic [ref=f3e422]: 理论分支
+              - generic [ref=f3e423]: 分析
+              - generic [ref=f3e424]:
+                - generic [ref=f3e425]: 第 03 层
+                - generic [ref=f3e426]: 3 前提
+            - button "理论分支：几何与拓扑" [ref=f3e427] [cursor=pointer]:
+              - generic [ref=f3e428]:
+                - generic [ref=f3e429]: TH. G
+                - generic [ref=f3e430]: 理论分支
+              - generic [ref=f3e431]: 几何与拓扑
+              - generic [ref=f3e432]:
+                - generic [ref=f3e433]: 第 03 层
+                - generic [ref=f3e434]: 3 前提
+            - button "理论分支：离散数学" [ref=f3e435] [cursor=pointer]:
+              - generic [ref=f3e436]:
+                - generic [ref=f3e437]: TH. D
+                - generic [ref=f3e438]: 理论分支
+              - generic [ref=f3e439]: 离散数学
+              - generic [ref=f3e440]:
+                - generic [ref=f3e441]: 第 03 层
+                - generic [ref=f3e442]: 2 前提
+            - button "理论分支：概率与统计" [ref=f3e443] [cursor=pointer]:
+              - generic [ref=f3e444]:
+                - generic [ref=f3e445]: TH. P
+                - generic [ref=f3e446]: 理论分支
+              - generic [ref=f3e447]: 概率与统计
+              - generic [ref=f3e448]:
+                - generic [ref=f3e449]: 第 03 层
+                - generic [ref=f3e450]: 3 前提
+            - button "理论分支：可计算性与复杂性" [ref=f3e451] [cursor=pointer]:
+              - generic [ref=f3e452]:
+                - generic [ref=f3e453]: TH. C
+                - generic [ref=f3e454]: 理论分支
+              - generic [ref=f3e455]: 可计算性与复杂性
+              - generic [ref=f3e456]:
+                - generic [ref=f3e457]: 第 03 层
+                - generic [ref=f3e458]: 3 前提
+            - button "应用连接：算法与数据结构" [ref=f3e459] [cursor=pointer]:
+              - generic [ref=f3e460]:
+                - generic [ref=f3e461]: APP. ALG
+                - generic [ref=f3e462]: 应用连接
+              - generic [ref=f3e463]: 算法与数据结构
+              - generic [ref=f3e464]:
+                - generic [ref=f3e465]: 第 04 层
+                - generic [ref=f3e466]: 2 前提
+            - button "应用连接：优化与数值计算" [ref=f3e467] [cursor=pointer]:
+              - generic [ref=f3e468]:
+                - generic [ref=f3e469]: APP. OPT
+                - generic [ref=f3e470]: 应用连接
+              - generic [ref=f3e471]: 优化与数值计算
+              - generic [ref=f3e472]:
+                - generic [ref=f3e473]: 第 04 层
+                - generic [ref=f3e474]: 3 前提
+            - button "应用连接：数学物理" [ref=f3e475] [cursor=pointer]:
+              - generic [ref=f3e476]:
+                - generic [ref=f3e477]: APP. PHY
+                - generic [ref=f3e478]: 应用连接
+              - generic [ref=f3e479]: 数学物理
+              - generic [ref=f3e480]:
+                - generic [ref=f3e481]: 第 04 层
+                - generic [ref=f3e482]: 4 前提
+            - button "应用连接：计算机科学" [ref=f3e483] [cursor=pointer]:
+              - generic [ref=f3e484]:
+                - generic [ref=f3e485]: APP. CS
+                - generic [ref=f3e486]: 应用连接
+              - generic [ref=f3e487]: 计算机科学
+              - generic [ref=f3e488]:
+                - generic [ref=f3e489]: 第 04 层
+                - generic [ref=f3e490]: 3 前提
+            - button "应用连接：机器学习与人工智能" [ref=f3e491] [cursor=pointer]:
+              - generic [ref=f3e492]:
+                - generic [ref=f3e493]: APP. AI
+                - generic [ref=f3e494]: 应用连接
+              - generic [ref=f3e495]: 机器学习与人工智能
+              - generic [ref=f3e496]:
+                - generic [ref=f3e497]: 第 04 层
+                - generic [ref=f3e498]: 5 前提
+        - generic "画布缩放" [ref=f3e499]:
+          - button "缩小" [ref=f3e500] [cursor=pointer]: −
+          - status [ref=f3e501]: 100%
+          - button "放大" [ref=f3e502] [cursor=pointer]: +
+    - complementary "知识节点详情" [ref=f3e503]:
+      - button "关闭节点详情" [ref=f3e504] [cursor=pointer]: ×
+      - generic [ref=f3e505]:
+        - generic [ref=f3e506]:
+          - generic [ref=f3e507]: META. 1
+          - generic [ref=f3e508]: 已建模 · 待核验
+        - paragraph [ref=f3e509]: 元规则
+        - heading "命题与真值" [level=2] [ref=f3e510]
+        - paragraph [ref=f3e511]: “命题是在解释固定后能够被判定为真或假的封闭陈述。”
+        - generic [ref=f3e513]:
+          - generic [ref=f3e514]: 成立语境
+          - paragraph [ref=f3e515]: 第 −1 层第一条可游玩路线；先区分陈述、命令、问题和开放表达式。
+        - generic [ref=f3e516]:
+          - generic [ref=f3e517]: 直接前提
+          - button "META. 0 对象、符号与表达" [ref=f3e519] [cursor=pointer]:
+            - generic [ref=f3e520]: META. 0
+            - generic [ref=f3e521]: 对象、符号与表达
+        - generic [ref=f3e524]:
+          - generic [ref=f3e525]: 推导摘要
+          - list [ref=f3e526]:
+            - listitem [ref=f3e527]: 检查表达是否在断言某种情况。
+            - listitem [ref=f3e528]: 检查对象是否全部指定，并询问它是否具有真值。
+        - generic [ref=f3e529]:
+          - generic [ref=f3e530]: 结构影响
+          - paragraph [ref=f3e531]: 当前节点继续支撑上方 35 个演示节点。关闭其地基不会改写内容，只会标记依赖链失效。
+        - paragraph [ref=f3e536]: 全局路线节点。当前建造模式从这里开始。

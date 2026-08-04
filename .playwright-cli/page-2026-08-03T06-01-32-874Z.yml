@@ -1,0 +1,126 @@
+- generic [ref=e1]:
+  - banner [ref=e2]:
+    - generic "知识大厦" [ref=e3]:
+      - generic [ref=e9]:
+        - strong [ref=e10]: 知识大厦
+        - generic [ref=e11]: KNOWLEDGE EDIFICE
+    - tablist "工作模式" [ref=e12]:
+      - tab "观察 依赖剖面" [ref=e13] [cursor=pointer]:
+        - generic [ref=e14]: 观察
+        - generic [ref=e15]: 依赖剖面
+      - tab "建造 挑战模式" [active] [selected] [ref=e16] [cursor=pointer]:
+        - generic [ref=e17]: 建造
+        - generic [ref=e18]: 挑战模式
+    - button "重置本关" [ref=e358] [cursor=pointer]
+  - generic [ref=e30]:
+    - complementary "建造路线" [ref=e359]:
+      - generic [ref=e360]:
+        - paragraph [ref=e361]: 建造路线 · 第一卷
+        - heading "从地基开始" [level=1] [ref=e362]
+        - paragraph [ref=e363]: 每一关只给出目标和已解锁工具。完成验收后，新命题会成为下一关的地基。
+        - generic [ref=e365]: 0 / 12 个命题
+      - generic [ref=e366]:
+        - paragraph [ref=e367]: 当前路线
+        - generic [ref=e368]:
+          - generic [ref=e369]:
+            - generic [ref=e370]: "00"
+            - generic [ref=e371]:
+              - strong [ref=e372]: 定义与公设
+              - generic [ref=e373]: 地基已就绪
+            - generic [ref=e374]: ✓
+          - generic [ref=e375]:
+            - generic [ref=e376]: "01"
+            - generic [ref=e377]:
+              - strong [ref=e378]: 构造等边三角形
+              - generic [ref=e379]: 当前挑战
+          - generic [ref=e380]:
+            - generic [ref=e381]: "02"
+            - generic [ref=e382]:
+              - strong [ref=e383]: 转移一条线段
+              - generic [ref=e384]: 完成上一关后解锁
+            - generic [ref=e385]: ⌁
+          - generic [ref=e386]:
+            - generic [ref=e387]: "03"
+            - generic [ref=e388]:
+              - strong [ref=e389]: 截取相等线段
+              - generic [ref=e390]: 尚未解锁
+            - generic [ref=e391]: ⌁
+          - generic [ref=e392]:
+            - generic [ref=e393]: "04"
+            - generic [ref=e394]:
+              - strong [ref=e395]: 边角边全等
+              - generic [ref=e396]: 尚未解锁
+            - generic [ref=e397]: ⌁
+      - generic [ref=e398]:
+        - paragraph [ref=e399]: 本关已解锁
+        - generic [ref=e400]:
+          - generic [ref=e401]: POST. 1 连接两点
+          - generic [ref=e402]: POST. 3 以圆心和距离作圆
+          - generic [ref=e403]: DEF. 15 圆上的等距关系
+      - generic [ref=e404]:
+        - paragraph [ref=e405]: 本次建造
+        - generic [ref=e406]:
+          - generic [ref=e407]: 0 次操作
+          - generic [ref=e408]: 0 条提示
+    - main "几何建造台" [ref=e409]:
+      - generic [ref=e410]:
+        - generic [ref=e411]:
+          - paragraph [ref=e412]: 挑战 01 · 命题 I.1
+          - heading "在给定线段 AB 上构造等边三角形" [level=2] [ref=e413]
+        - generic [ref=e414]: 等待第一步
+      - generic [ref=e417]:
+        - generic [ref=e418]:
+          - generic [ref=e419]: 选择工具
+          - strong [ref=e420]: 从下方工具栏选择“作圆”或“连接”，开始你的构造。
+        - generic [ref=e421]:
+          - application "等边三角形作图区域" [ref=e422]:
+            - generic [ref=e424]: EUCLIDEAN CONSTRUCTION PLANE · UNIT AB
+            - generic [ref=e425]:
+              - button "点 A" [ref=e426] [cursor=pointer]:
+                - generic: A
+                - generic: 已知端点
+              - button "点 B" [ref=e429] [cursor=pointer]:
+                - generic: B
+                - generic: 已知端点
+          - status
+          - generic:
+            - generic: PROP. I.1
+            - strong: 构造成立
+        - generic "作图工具" [ref=e432]:
+          - button "作圆 先圆心，后半径" [ref=e433] [cursor=pointer]:
+            - generic [ref=e437]: 作圆
+            - generic [ref=e438]: 先圆心，后半径
+          - button "取交点 需要两个相交圆" [disabled] [ref=e439]:
+            - generic [ref=e443]: 取交点
+            - generic [ref=e444]: 需要两个相交圆
+          - button "连接 依次选择两个点" [ref=e445] [cursor=pointer]:
+            - generic [ref=e450]: 连接
+            - generic [ref=e451]: 依次选择两个点
+          - button "撤销" [disabled] [ref=e453]
+          - button "重置" [ref=e457] [cursor=pointer]
+    - complementary "挑战目标与验收" [ref=e461]:
+      - generic [ref=e462]:
+        - generic [ref=e463]:
+          - generic [ref=e464]: CHALLENGE 01
+          - generic [ref=e465]: 进行中
+        - paragraph [ref=e466]: 当前目标
+        - heading "构造等边三角形" [level=2] [ref=e467]
+        - paragraph [ref=e468]: “在线段 AB 上找到点 C，使 AB、AC、BC 三条边相等。”
+        - generic [ref=e470]:
+          - generic [ref=e471]: 已知条件
+          - paragraph [ref=e472]: 有限直线段 AB 已给出。你只能使用本关已解锁的作图能力。
+        - generic [ref=e473]:
+          - generic [ref=e474]: 验收条件
+          - generic [ref=e475]:
+            - generic [ref=e476]: 得到以 A 为圆心、AB 为半径的圆
+            - generic [ref=e479]: 得到以 B 为圆心、BA 为半径的圆
+            - generic [ref=e482]: 取两圆交点 C
+            - generic [ref=e485]: 连接 AC 与 BC
+        - generic [ref=e488]:
+          - generic [ref=e489]: 渐进提示
+          - paragraph [ref=e490]: 提示默认隐藏。只有卡住时再打开，不影响你继续尝试。
+          - button "给我一点提示" [ref=e491] [cursor=pointer]
+        - generic [ref=e492]:
+          - button "验证我的构造" [ref=e493] [cursor=pointer]
+          - paragraph [ref=e494]: 验收只检查几何关系，不要求操作顺序与参考解法完全一致。
+        - paragraph [ref=e499]: 系统掌握参考构造，但只在你主动请求时逐级开放提示。

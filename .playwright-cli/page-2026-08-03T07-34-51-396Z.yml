@@ -1,0 +1,125 @@
+- generic [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic "知识大厦" [ref=f1e3]:
+      - generic [ref=f1e9]:
+        - strong [ref=f1e10]: 知识大厦
+        - generic [ref=f1e11]: KNOWLEDGE EDIFICE
+    - tablist "工作模式" [ref=f1e12]:
+      - tab "观察 依赖剖面" [ref=f1e13] [cursor=pointer]:
+        - generic [ref=f1e14]: 观察
+        - generic [ref=f1e15]: 依赖剖面
+      - tab "建造 挑战模式" [active] [selected] [ref=f1e16] [cursor=pointer]:
+        - generic [ref=f1e17]: 建造
+        - generic [ref=f1e18]: 挑战模式
+    - button "重置本关" [ref=f1e358] [cursor=pointer]
+  - generic [ref=f1e30]:
+    - complementary "建造路线" [ref=f1e359]:
+      - generic [ref=f1e360]:
+        - paragraph [ref=f1e361]: 建造路线 · 第一卷
+        - heading "从地基开始" [level=1] [ref=f1e362]
+        - paragraph [ref=f1e363]: 每一关只给出目标和已解锁工具。完成验收后，新命题会成为下一关的地基。
+        - generic [ref=f1e365]: 0 / 12 个命题
+      - generic [ref=f1e366]:
+        - paragraph [ref=f1e367]: 当前路线
+        - generic [ref=f1e368]:
+          - generic [ref=f1e369]:
+            - generic [ref=f1e370]: "00"
+            - generic [ref=f1e371]:
+              - strong [ref=f1e372]: 定义与公设
+              - generic [ref=f1e373]: 地基已就绪
+            - generic [ref=f1e374]: ✓
+          - generic [ref=f1e375]:
+            - generic [ref=f1e376]: "01"
+            - generic [ref=f1e377]:
+              - strong [ref=f1e378]: 构造等边三角形
+              - generic [ref=f1e379]: 当前挑战
+          - generic [ref=f1e380]:
+            - generic [ref=f1e381]: "02"
+            - generic [ref=f1e382]:
+              - strong [ref=f1e383]: 转移一条线段
+              - generic [ref=f1e384]: 完成上一关后解锁
+            - generic [ref=f1e385]: ⌁
+          - generic [ref=f1e386]:
+            - generic [ref=f1e387]: "03"
+            - generic [ref=f1e388]:
+              - strong [ref=f1e389]: 截取相等线段
+              - generic [ref=f1e390]: 尚未解锁
+            - generic [ref=f1e391]: ⌁
+          - generic [ref=f1e392]:
+            - generic [ref=f1e393]: "04"
+            - generic [ref=f1e394]:
+              - strong [ref=f1e395]: 边角边全等
+              - generic [ref=f1e396]: 尚未解锁
+            - generic [ref=f1e397]: ⌁
+      - generic [ref=f1e398]:
+        - paragraph [ref=f1e399]: 本关已解锁
+        - generic [ref=f1e400]:
+          - generic [ref=f1e401]: POST. 1 连接两点
+          - generic [ref=f1e402]: POST. 3 以圆心和距离作圆
+          - generic [ref=f1e403]: DEF. 15 圆上的等距关系
+      - generic [ref=f1e404]:
+        - paragraph [ref=f1e405]: 本次建造
+        - generic [ref=f1e406]:
+          - generic [ref=f1e407]: 0 次核对
+          - generic [ref=f1e408]: 0 条提示
+    - main "离线思考关卡" [ref=f1e409]:
+      - generic [ref=f1e410]:
+        - generic [ref=f1e411]:
+          - paragraph [ref=f1e412]: 挑战 01 · 命题 I.1
+          - heading "在给定线段 AB 上构造等边三角形" [level=2] [ref=f1e413]
+        - generic [ref=f1e414]: 独立思考
+      - generic [ref=f1e417]:
+        - generic [ref=f1e418]:
+          - generic [ref=f1e419]: 思考阶段
+          - strong [ref=f1e420]: 请在本子上作图并写出理由；这里不要求输入或操作。
+        - generic [ref=f1e421]:
+          - generic:
+            - paragraph: 离开屏幕完成
+            - heading "只使用当前已解锁的知识，找到点 C。" [level=3]
+            - paragraph: 你可以在纸上画，也可以只在脑海中推导。完成后回来核对关键理由。
+          - img "题目给出的线段 AB" [ref=f1e422]:
+            - generic [ref=f1e424]: PROBLEM FIGURE · GIVEN SEGMENT AB
+            - generic [ref=f1e425]:
+              - generic: A
+              - generic: 已知端点
+            - generic [ref=f1e426]:
+              - generic: B
+              - generic: 已知端点
+            - generic [ref=f1e427]: "?"
+            - generic [ref=f1e430]: 在纸上寻找满足条件的点 C
+          - generic "本关步骤" [ref=f1e431]:
+            - generic [ref=f1e432]: 01 独立思考
+            - generic [ref=f1e433]: 02 核对关键点
+            - generic [ref=f1e434]: 03 对照证明
+            - generic [ref=f1e435]: 04 记录结果
+          - status
+          - generic:
+            - generic: PROP. I.1
+            - strong: 理解确认
+        - generic "学习操作" [ref=f1e436]:
+          - button "给我一点提示" [ref=f1e437] [cursor=pointer]
+          - button "纸上已经完成 开始核对思路" [ref=f1e438] [cursor=pointer]:
+            - generic [ref=f1e439]: 纸上已经完成
+            - strong [ref=f1e440]: 开始核对思路
+          - button "重新挑战 回到题目" [ref=f1e441] [cursor=pointer]:
+            - generic [ref=f1e442]: 重新挑战
+            - strong [ref=f1e443]: 回到题目
+    - complementary "挑战目标与核对" [ref=f1e444]:
+      - generic [ref=f1e445]:
+        - generic [ref=f1e446]:
+          - generic [ref=f1e447]: CHALLENGE 01
+          - generic [ref=f1e448]: 思考中
+        - paragraph [ref=f1e449]: 当前目标
+        - heading "构造等边三角形" [level=2] [ref=f1e450]
+        - paragraph [ref=f1e451]: “在线段 AB 上找到点 C，使 AB、AC、BC 三条边相等。”
+        - generic [ref=f1e453]:
+          - generic [ref=f1e454]: 已知条件
+          - paragraph [ref=f1e455]: 有限直线段 AB 已给出。允许使用连接两点、以指定圆心和距离作圆，以及圆的等距定义。
+        - generic [ref=f1e456]:
+          - generic [ref=f1e457]: 渐进提示
+          - paragraph [ref=f1e458]: 提示默认隐藏。只有卡住时再打开，不影响你继续尝试。
+          - button "给我一点提示" [ref=f1e459] [cursor=pointer]
+        - generic [ref=f1e460]:
+          - button "我已完成，开始核对" [ref=f1e461] [cursor=pointer]
+          - paragraph [ref=f1e462]: 无需提交纸上的内容；核对过程完全由你掌控。
+        - paragraph [ref=f1e467]: 系统只负责出题、提示和提供参考证明；真正的推导发生在你的纸上或脑海里。

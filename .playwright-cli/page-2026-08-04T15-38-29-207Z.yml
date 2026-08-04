@@ -1,0 +1,288 @@
+- generic [ref=f1e1]:
+  - banner [ref=f1e2]:
+    - generic "知识大厦" [ref=f1e3]:
+      - generic [ref=f1e9]:
+        - strong [ref=f1e10]: 知识大厦
+        - generic [ref=f1e11]: KNOWLEDGE EDIFICE
+    - tablist "工作模式" [ref=f1e12]:
+      - tab "观察 依赖剖面" [selected] [ref=f1e13] [cursor=pointer]:
+        - generic [ref=f1e14]: 观察
+        - generic [ref=f1e15]: 依赖剖面
+      - tab "建造 挑战模式" [ref=f1e16] [cursor=pointer]:
+        - generic [ref=f1e17]: 建造
+        - generic [ref=f1e18]: 挑战模式
+    - generic [ref=f1e19]:
+      - searchbox "⌘ K" [ref=f1e23]
+      - generic [ref=f1e24]: ⌘ K
+    - generic [ref=f1e25]:
+      - button "定位选中" [ref=f1e26] [cursor=pointer]
+      - button "显示全部知识节点" [ref=f1e27] [cursor=pointer]
+  - generic [ref=f1e30]:
+    - complementary "知识图谱控制" [ref=f1e31]:
+      - region "观察范围" [ref=f1e32]:
+        - button "整座大厦 全局骨架" [ref=f1e33] [cursor=pointer]:
+          - generic [ref=f1e34]: 整座大厦
+          - generic [ref=f1e35]: 全局骨架
+        - button "几何翼 现有原型" [pressed] [ref=f1e36] [cursor=pointer]:
+          - generic [ref=f1e37]: 几何翼
+          - generic [ref=f1e38]: 现有原型
+      - generic [ref=f1e39]:
+        - paragraph [ref=f1e40]: 语境 01
+        - heading "欧氏几何" [level=1] [ref=f1e870]
+        - paragraph [ref=f1e42]: 用于验证知识大厦交互与数据结构的演示性依赖模型，并非《几何原本》原文的逐句形式化。
+        - generic [ref=f1e43]:
+          - generic [ref=f1e44]: 19 个节点
+          - generic [ref=f1e45]: 41 条依赖
+      - generic [ref=f1e46]:
+        - generic [ref=f1e47]:
+          - generic [ref=f1e48]:
+            - paragraph [ref=f1e49]: 地基控制
+            - heading "公理与公设" [level=2] [ref=f1e871]
+          - button "全部恢复" [ref=f1e51] [cursor=pointer]
+        - paragraph [ref=f1e52]: 关闭一条地基，观察哪些上层结论会失去支持。
+        - generic [ref=f1e53]:
+          - generic [ref=f1e872]:
+            - generic "同量相等" [ref=f1e873]: CN. 1 · 同量相等
+            - switch "启用同量相等" [checked] [ref=f1e874] [cursor=pointer]
+          - generic [ref=f1e875]:
+            - generic "连接两点" [ref=f1e876]: POST. 1 · 连接两点
+            - switch "启用连接两点" [checked] [ref=f1e877] [cursor=pointer]
+          - generic [ref=f1e878]:
+            - generic "作任意圆" [ref=f1e879]: POST. 3 · 作任意圆
+            - switch "启用作任意圆" [checked] [ref=f1e880] [cursor=pointer]
+      - generic [ref=f1e66]:
+        - generic [ref=f1e68]:
+          - paragraph [ref=f1e69]: 显示范围
+          - heading "知识类型" [level=2] [ref=f1e70]
+        - generic [ref=f1e71]:
+          - generic [ref=f1e881]:
+            - generic [ref=f1e882]: 定义 · 3
+            - checkbox "显示定义" [checked] [ref=f1e883] [cursor=pointer]
+          - generic [ref=f1e884]:
+            - generic [ref=f1e885]: 公设 · 2
+            - checkbox "显示公设" [checked] [ref=f1e886] [cursor=pointer]
+          - generic [ref=f1e887]:
+            - generic [ref=f1e888]: 共同观念 · 2
+            - checkbox "显示共同观念" [checked] [ref=f1e889] [cursor=pointer]
+          - generic [ref=f1e890]:
+            - generic [ref=f1e891]: 命题 · 12
+            - checkbox "显示命题" [checked] [ref=f1e892] [cursor=pointer]
+      - generic [ref=f1e90]:
+        - paragraph [ref=f1e91]: 结构状态
+        - generic [ref=f1e94]:
+          - strong [ref=f1e95]: 结构完整
+          - paragraph [ref=f1e96]: 所有演示节点都有可追溯的地基。
+    - main "知识依赖图" [ref=f1e97]:
+      - generic [ref=f1e98]:
+        - generic [ref=f1e99]:
+          - paragraph [ref=f1e100]: 依赖剖面
+          - heading "由地基向上阅读" [level=2] [ref=f1e893]
+        - generic "图例" [ref=f1e102]:
+          - generic [ref=f1e103]: 严格依赖
+          - generic [ref=f1e105]: 当前节点
+          - generic [ref=f1e107]: 失去支持
+      - generic [active] [ref=f1e109]:
+        - generic [ref=f1e110]:
+          - generic [ref=f1e111]:
+            - generic [ref=f1e894]: 04 · 延伸构造
+            - generic [ref=f1e896]: 03 · 组合推论
+            - generic [ref=f1e898]: 02 · 比较与等价
+            - generic [ref=f1e900]: 01 · 基础构造
+            - generic [ref=f1e902]: 00 · 定义、公设与共同观念
+          - generic [ref=f1e212]:
+            - button "定义：点" [ref=f1e944] [cursor=pointer]:
+              - generic [ref=f1e945]:
+                - generic [ref=f1e946]: DEF. 1
+                - generic [ref=f1e947]: 定义
+              - generic [ref=f1e948]: 点
+              - generic [ref=f1e949]:
+                - generic [ref=f1e950]: 第 00 层
+                - generic [ref=f1e951]: 0 前提
+            - button "定义：线" [ref=f1e952] [cursor=pointer]:
+              - generic [ref=f1e953]:
+                - generic [ref=f1e954]: DEF. 2
+                - generic [ref=f1e955]: 定义
+              - generic [ref=f1e956]: 线
+              - generic [ref=f1e957]:
+                - generic [ref=f1e958]: 第 00 层
+                - generic [ref=f1e959]: 0 前提
+            - button "定义：圆" [ref=f1e960] [cursor=pointer]:
+              - generic [ref=f1e961]:
+                - generic [ref=f1e962]: DEF. 15
+                - generic [ref=f1e963]: 定义
+              - generic [ref=f1e964]: 圆
+              - generic [ref=f1e965]:
+                - generic [ref=f1e966]: 第 00 层
+                - generic [ref=f1e967]: 2 前提
+            - button "共同观念：同量相等" [ref=f1e968] [cursor=pointer]:
+              - generic [ref=f1e969]:
+                - generic [ref=f1e970]: CN. 1
+                - generic [ref=f1e971]: 共同观念
+              - generic [ref=f1e972]: 同量相等
+              - generic [ref=f1e973]:
+                - generic [ref=f1e974]: 第 00 层
+                - generic [ref=f1e975]: 0 前提
+            - button "公设：连接两点" [ref=f1e976] [cursor=pointer]:
+              - generic [ref=f1e977]:
+                - generic [ref=f1e978]: POST. 1
+                - generic [ref=f1e979]: 公设
+              - generic [ref=f1e980]: 连接两点
+              - generic [ref=f1e981]:
+                - generic [ref=f1e982]: 第 00 层
+                - generic [ref=f1e983]: 2 前提
+            - button "公设：作任意圆" [ref=f1e984] [cursor=pointer]:
+              - generic [ref=f1e985]:
+                - generic [ref=f1e986]: POST. 3
+                - generic [ref=f1e987]: 公设
+              - generic [ref=f1e988]: 作任意圆
+              - generic [ref=f1e989]:
+                - generic [ref=f1e990]: 第 00 层
+                - generic [ref=f1e991]: 1 前提
+            - button "共同观念：整体大于部分" [ref=f1e992] [cursor=pointer]:
+              - generic [ref=f1e993]:
+                - generic [ref=f1e994]: CN. 5
+                - generic [ref=f1e995]: 共同观念
+              - generic [ref=f1e996]: 整体大于部分
+              - generic [ref=f1e997]:
+                - generic [ref=f1e998]: 第 00 层
+                - generic [ref=f1e999]: 0 前提
+            - button "命题：构造等边三角形" [ref=f1e1000] [cursor=pointer]:
+              - generic [ref=f1e1001]:
+                - generic [ref=f1e1002]: PROP. I.1
+                - generic [ref=f1e1003]: 命题
+              - generic [ref=f1e1004]: 构造等边三角形
+              - generic [ref=f1e1005]:
+                - generic [ref=f1e1006]: 第 01 层
+                - generic [ref=f1e1007]: 5 前提
+            - button "命题：转移一条线段" [ref=f1e1008] [cursor=pointer]:
+              - generic [ref=f1e1009]:
+                - generic [ref=f1e1010]: PROP. I.2
+                - generic [ref=f1e1011]: 命题
+              - generic [ref=f1e1012]: 转移一条线段
+              - generic [ref=f1e1013]:
+                - generic [ref=f1e1014]: 第 01 层
+                - generic [ref=f1e1015]: 4 前提
+            - button "命题：边角边全等" [ref=f1e1016] [cursor=pointer]:
+              - generic [ref=f1e1017]:
+                - generic [ref=f1e1018]: PROP. I.4
+                - generic [ref=f1e1019]: 命题
+              - generic [ref=f1e1020]: 边角边全等
+              - generic [ref=f1e1021]:
+                - generic [ref=f1e1022]: 第 01 层
+                - generic [ref=f1e1023]: 2 前提
+            - button "命题：截取相等线段" [ref=f1e1024] [cursor=pointer]:
+              - generic [ref=f1e1025]:
+                - generic [ref=f1e1026]: PROP. I.3
+                - generic [ref=f1e1027]: 命题
+              - generic [ref=f1e1028]: 截取相等线段
+              - generic [ref=f1e1029]:
+                - generic [ref=f1e1030]: 第 02 层
+                - generic [ref=f1e1031]: 3 前提
+            - button "命题：等腰三角形底角相等" [ref=f1e1032] [cursor=pointer]:
+              - generic [ref=f1e1033]:
+                - generic [ref=f1e1034]: PROP. I.5
+                - generic [ref=f1e1035]: 命题
+              - generic [ref=f1e1036]: 等腰三角形底角相等
+              - generic [ref=f1e1037]:
+                - generic [ref=f1e1038]: 第 02 层
+                - generic [ref=f1e1039]: 3 前提
+            - button "命题：同侧三角形顶点唯一性" [ref=f1e1040] [cursor=pointer]:
+              - generic [ref=f1e1041]:
+                - generic [ref=f1e1042]: PROP. I.7
+                - generic [ref=f1e1043]: 命题
+              - generic [ref=f1e1044]: 同侧三角形顶点唯一性
+              - generic [ref=f1e1045]:
+                - generic [ref=f1e1046]: 第 02 层
+                - generic [ref=f1e1047]: 2 前提
+            - button "命题：等角所对边相等" [ref=f1e1048] [cursor=pointer]:
+              - generic [ref=f1e1049]:
+                - generic [ref=f1e1050]: PROP. I.6
+                - generic [ref=f1e1051]: 命题
+              - generic [ref=f1e1052]: 等角所对边相等
+              - generic [ref=f1e1053]:
+                - generic [ref=f1e1054]: 第 03 层
+                - generic [ref=f1e1055]: 3 前提
+            - button "命题：边边边确定角" [ref=f1e1056] [cursor=pointer]:
+              - generic [ref=f1e1057]:
+                - generic [ref=f1e1058]: PROP. I.8
+                - generic [ref=f1e1059]: 命题
+              - generic [ref=f1e1060]: 边边边确定角
+              - generic [ref=f1e1061]:
+                - generic [ref=f1e1062]: 第 03 层
+                - generic [ref=f1e1063]: 2 前提
+            - button "命题：二等分直线角" [ref=f1e1064] [cursor=pointer]:
+              - generic [ref=f1e1065]:
+                - generic [ref=f1e1066]: PROP. I.9
+                - generic [ref=f1e1067]: 命题
+              - generic [ref=f1e1068]: 二等分直线角
+              - generic [ref=f1e1069]:
+                - generic [ref=f1e1070]: 第 03 层
+                - generic [ref=f1e1071]: 3 前提
+            - button "命题：二等分有限直线" [ref=f1e1072] [cursor=pointer]:
+              - generic [ref=f1e1073]:
+                - generic [ref=f1e1074]: PROP. I.10
+                - generic [ref=f1e1075]: 命题
+              - generic [ref=f1e1076]: 二等分有限直线
+              - generic [ref=f1e1077]:
+                - generic [ref=f1e1078]: 第 03 层
+                - generic [ref=f1e1079]: 3 前提
+            - button "命题：在线上作垂线" [ref=f1e1080] [cursor=pointer]:
+              - generic [ref=f1e1081]:
+                - generic [ref=f1e1082]: PROP. I.11
+                - generic [ref=f1e1083]: 命题
+              - generic [ref=f1e1084]: 在线上作垂线
+              - generic [ref=f1e1085]:
+                - generic [ref=f1e1086]: 第 04 层
+                - generic [ref=f1e1087]: 3 前提
+            - button "命题：从线外一点作垂线" [ref=f1e1088] [cursor=pointer]:
+              - generic [ref=f1e1089]:
+                - generic [ref=f1e1090]: PROP. I.12
+                - generic [ref=f1e1091]: 命题
+              - generic [ref=f1e1092]: 从线外一点作垂线
+              - generic [ref=f1e1093]:
+                - generic [ref=f1e1094]: 第 04 层
+                - generic [ref=f1e1095]: 3 前提
+        - generic "画布缩放" [ref=f1e509]:
+          - button "缩小" [ref=f1e510] [cursor=pointer]: −
+          - status [ref=f1e511]: 35%
+          - button "放大" [ref=f1e512] [cursor=pointer]: +
+        - paragraph: 拖动画布 · 滚轮缩放 · 点击节点追溯
+    - complementary "知识节点详情" [ref=f1e513]:
+      - generic [ref=f1e514]:
+        - generic [ref=f1e515]:
+          - generic [ref=f1e516]: PROP. I.1
+          - generic [ref=f1e517]: 已建模 · 待核验
+        - paragraph [ref=f1e518]: 命题
+        - heading "构造等边三角形" [level=2] [ref=f1e1096]
+        - paragraph [ref=f1e520]: “在给定的有限直线上作一个等边三角形。”
+        - generic [ref=f1e522]:
+          - generic [ref=f1e523]: 成立语境
+          - paragraph [ref=f1e524]: 欧氏平面几何；使用直尺—圆规式构造许可。
+        - generic [ref=f1e525]:
+          - generic [ref=f1e526]: 直接前提
+          - generic [ref=f1e527]:
+            - button "DEF. 1 点" [ref=f1e1097] [cursor=pointer]:
+              - generic [ref=f1e1098]: DEF. 1
+              - generic [ref=f1e1099]: 点
+            - button "DEF. 2 线" [ref=f1e1102] [cursor=pointer]:
+              - generic [ref=f1e1103]: DEF. 2
+              - generic [ref=f1e1104]: 线
+            - button "DEF. 15 圆" [ref=f1e1107] [cursor=pointer]:
+              - generic [ref=f1e1108]: DEF. 15
+              - generic [ref=f1e1109]: 圆
+            - button "POST. 1 连接两点" [ref=f1e1112] [cursor=pointer]:
+              - generic [ref=f1e1113]: POST. 1
+              - generic [ref=f1e1114]: 连接两点
+            - button "POST. 3 作任意圆" [ref=f1e1117] [cursor=pointer]:
+              - generic [ref=f1e1118]: POST. 3
+              - generic [ref=f1e1119]: 作任意圆
+        - generic [ref=f1e533]:
+          - generic [ref=f1e534]: 推导摘要
+          - list [ref=f1e535]:
+            - listitem [ref=f1e1122]: 以线段两个端点为圆心，分别以该线段为半径作圆。
+            - listitem [ref=f1e1123]: 取两圆的交点，并把交点分别连接到原线段两端。
+            - listitem [ref=f1e1124]: 三条边都是同一半径，因此所得三角形三边相等。
+        - generic [ref=f1e538]:
+          - generic [ref=f1e539]: 结构影响
+          - paragraph [ref=f1e540]: 当前节点继续支撑上方 10 个演示节点。关闭其地基不会改写内容，只会标记依赖链失效。
+        - paragraph [ref=f1e545]: 《几何原本》第一卷命题 1。依赖关系经过压缩，仅用于交互原型。

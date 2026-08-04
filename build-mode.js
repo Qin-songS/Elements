@@ -123,7 +123,7 @@ export function initBuildMode() {
     if (assessment === "independent" || assessment === "hinted") {
       state.phase = "record";
       render();
-      showToast("学习状态已记录；确认后即可安放这条命题。", false);
+      showToast("学习状态已记录；确认后即可安放这块地基。", false);
     } else {
       render();
       showToast(

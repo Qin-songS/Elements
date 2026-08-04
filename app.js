@@ -349,7 +349,8 @@ function renderInspector() {
     const labels = blocking.map((id) => `${nodeMap.get(id).code} ${nodeMap.get(id).title}`).join("、");
     impactText.textContent = `当前节点因“${labels}”被关闭而失去支持；恢复这些地基后可重新成立。`;
   } else if (descendants.size) {
-    impactText.textContent = `当前节点继续支撑上方 ${descendants.size} 个演示节点。关闭其地基不会改写内容，只会标记依赖链失效。`;
+    const nodeKind = activeScope === "edifice" ? "路线节点" : "演示节点";
+    impactText.textContent = `当前节点继续支撑上方 ${descendants.size} 个${nodeKind}。关闭其地基不会改写内容，只会标记依赖链失效。`;
   } else {
     impactText.textContent = "当前节点位于这组演示结构的顶层，暂时没有进一步依赖它的结论。";
   }
@@ -368,9 +369,11 @@ function updateIntegrity() {
   section.classList.toggle("is-broken", disabledAxioms.size > 0);
   if (disabledAxioms.size === 0) {
     title.textContent = "结构完整";
-    description.textContent = "所有演示节点都有可追溯的地基。";
+    description.textContent = activeScope === "edifice"
+      ? "所有路线节点都有可追溯的地基。"
+      : "所有演示节点都有可追溯的地基。";
   } else {
-    title.textContent = `${invalidDerivedCount} 个结论失去支持`;
+    title.textContent = `${invalidDerivedCount} 个${activeScope === "edifice" ? "区域" : "结论"}失去支持`;
     description.textContent = `${disabledAxioms.size} 条地基已关闭；内容仍保留，仅改变成立状态。`;
   }
 }

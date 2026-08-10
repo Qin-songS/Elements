@@ -5,6 +5,7 @@ const hints = [
 ];
 
 const phaseOrder = ["think", "check", "reference", "record"];
+const STORAGE_KEY = "knowledge-edifice.build.m1.v1";
 
 export function initBuildMode() {
   const elements = {
@@ -40,7 +41,7 @@ export function initBuildMode() {
     progressText: document.querySelector("#routeProgressText")
   };
 
-  let state = freshState();
+  let state = loadState();
   let toastTimer;
 
   bindEvents();
@@ -60,6 +61,39 @@ export function initBuildMode() {
       assessment: null,
       placed: false
     };
+  }
+
+  function loadState() {
+    try {
+      const saved = JSON.parse(window.localStorage.getItem(STORAGE_KEY));
+      if (!saved || typeof saved !== "object") return freshState();
+      const phase = phaseOrder.includes(saved.phase) ? saved.phase : "think";
+      const revealedChecks = Array.isArray(saved.revealedChecks)
+        ? saved.revealedChecks.filter((index) => Number.isInteger(index) && index >= 0 && index <= 2)
+        : [];
+      return {
+        phase,
+        hintLevel: Math.max(0, Math.min(Number(saved.hintLevel) || 0, hints.length)),
+        revealedChecks: new Set(revealedChecks),
+        referenceOpened: Boolean(saved.referenceOpened),
+        assessment: ["independent", "hinted", "redo", "unclear"].includes(saved.assessment) ? saved.assessment : null,
+        placed: Boolean(saved.placed)
+      };
+    } catch {
+      return freshState();
+    }
+  }
+
+  function persistState() {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        ...state,
+        revealedChecks: [...state.revealedChecks],
+        savedAt: new Date().toISOString()
+      }));
+    } catch {
+      // Storage is an enhancement; the challenge still works when it is blocked.
+    }
   }
 
   function bindEvents() {
@@ -153,6 +187,7 @@ export function initBuildMode() {
     renderChecks();
     renderAssessment();
     renderRoute();
+    persistState();
   }
 
   function renderDiagram() {

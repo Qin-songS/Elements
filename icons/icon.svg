@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="知识大厦">
+  <rect width="512" height="512" rx="96" fill="#0b0e10"/>
+  <path d="M102 394h308" fill="none" stroke="#ddbd79" stroke-width="12" stroke-linecap="square"/>
+  <path d="M126 354h52V278h-52zm70 0h52V224h-52zm70 0h52V166h-52zm70 0h52V104h-52z" fill="#ddbd79"/>
+  <path d="M102 416h308" fill="none" stroke="#edf0eb" stroke-opacity=".18" stroke-width="4"/>
+</svg>

@@ -18,9 +18,15 @@ let pan = { x: 0, y: 0 };
 let zoom = 0.68;
 let isDragging = false;
 let dragOrigin = null;
+let pinchOrigin = null;
+let gestureMoved = false;
+let suppressNextNodeClick = false;
+const activePointers = new Map();
 let appMode = "atlas";
 let activeScope = "edifice";
 let buildController;
+let installPrompt = null;
+let appToastTimer;
 
 const elements = {
   viewport: document.querySelector("#graphViewport"),
@@ -32,12 +38,18 @@ const elements = {
   filterList: document.querySelector("#filterList"),
   search: document.querySelector("#knowledgeSearch"),
   searchResults: document.querySelector("#searchResults"),
+  mobileSearch: document.querySelector("#mobileKnowledgeSearch"),
+  mobileSearchResults: document.querySelector("#mobileSearchResults"),
   zoomLevel: document.querySelector("#zoomLevel"),
   inspector: document.querySelector("#inspector"),
   sidebar: document.querySelector("#sidebar"),
   buildInspector: document.querySelector("#buildInspector"),
   buildSidebar: document.querySelector("#buildSidebar"),
   backdrop: document.querySelector("#mobileBackdrop"),
+  navToggle: document.querySelector("#navToggle"),
+  inspectorToggle: document.querySelector("#inspectorToggle"),
+  installButtons: [...document.querySelectorAll("[data-install-app]")],
+  appToast: document.querySelector("#appToast"),
   contextEyebrow: document.querySelector("#atlasContextEyebrow"),
   contextTitle: document.querySelector("#atlasContextTitle"),
   contextDescription: document.querySelector("#atlasContextDescription"),
@@ -48,6 +60,8 @@ const elements = {
 };
 
 async function init() {
+  setupInstallExperience();
+  registerServiceWorker();
   await loadAtlasScope("edifice", false);
   buildController = initBuildMode();
   bindEvents();
@@ -389,7 +403,10 @@ function bindEvents() {
   });
 
   document.querySelectorAll("[data-atlas-scope]").forEach((button) => {
-    button.addEventListener("click", () => loadAtlasScope(button.dataset.atlasScope));
+    button.addEventListener("click", async () => {
+      await loadAtlasScope(button.dataset.atlasScope);
+      if (window.innerWidth <= 900) closePanels();
+    });
   });
 
   document.querySelectorAll("[data-open-scope]").forEach((button) => {
@@ -420,6 +437,10 @@ function bindEvents() {
   elements.nodeLayer.addEventListener("click", (event) => {
     const button = event.target.closest("[data-node-id]");
     if (!button) return;
+    if (suppressNextNodeClick) {
+      event.preventDefault();
+      return;
+    }
     selectNode(button.dataset.nodeId, false);
   });
 
@@ -442,31 +463,19 @@ function bindEvents() {
     applyTransform();
   }, { passive: false });
 
-  elements.viewport.addEventListener("pointerdown", (event) => {
-    if (event.target.closest(".knowledge-node") || event.target.closest(".canvas-controls")) return;
-    isDragging = true;
-    dragOrigin = { x: event.clientX - pan.x, y: event.clientY - pan.y };
-    elements.viewport.classList.add("is-dragging");
-    elements.viewport.setPointerCapture(event.pointerId);
+  elements.viewport.addEventListener("pointerdown", beginViewportGesture);
+  elements.viewport.addEventListener("pointermove", updateViewportGesture);
+  elements.viewport.addEventListener("pointerup", endViewportGesture);
+  elements.viewport.addEventListener("pointercancel", endViewportGesture);
+  elements.viewport.addEventListener("dblclick", (event) => {
+    if (event.target.closest(".canvas-controls")) return;
+    const node = event.target.closest("[data-node-id]");
+    if (node) selectNode(node.dataset.nodeId, true);
+    else focusSelected(true);
   });
 
-  elements.viewport.addEventListener("pointermove", (event) => {
-    if (!isDragging) return;
-    pan.x = event.clientX - dragOrigin.x;
-    pan.y = event.clientY - dragOrigin.y;
-    applyTransform();
-  });
-
-  const stopDragging = (event) => {
-    if (!isDragging) return;
-    isDragging = false;
-    elements.viewport.classList.remove("is-dragging");
-    if (elements.viewport.hasPointerCapture(event.pointerId)) elements.viewport.releasePointerCapture(event.pointerId);
-  };
-  elements.viewport.addEventListener("pointerup", stopDragging);
-  elements.viewport.addEventListener("pointercancel", stopDragging);
-
-  elements.search.addEventListener("input", renderSearchResults);
+  elements.search.addEventListener("input", () => renderSearchResultsFor(elements.search, elements.searchResults));
+  elements.mobileSearch.addEventListener("input", () => renderSearchResultsFor(elements.mobileSearch, elements.mobileSearchResults));
   elements.search.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       const first = elements.searchResults.querySelector("[data-search-id]");
@@ -478,7 +487,23 @@ function bindEvents() {
     }
   });
 
+  elements.mobileSearch.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      const first = elements.mobileSearchResults.querySelector("[data-search-id]");
+      if (first) chooseSearchResult(first.dataset.searchId);
+    }
+    if (event.key === "Escape") {
+      elements.mobileSearchResults.hidden = true;
+      elements.mobileSearch.blur();
+    }
+  });
+
   elements.searchResults.addEventListener("click", (event) => {
+    const result = event.target.closest("[data-search-id]");
+    if (result) chooseSearchResult(result.dataset.searchId);
+  });
+
+  elements.mobileSearchResults.addEventListener("click", (event) => {
     const result = event.target.closest("[data-search-id]");
     if (result) chooseSearchResult(result.dataset.searchId);
   });
@@ -492,10 +517,13 @@ function bindEvents() {
 
   document.addEventListener("click", (event) => {
     if (!event.target.closest(".search-box")) elements.searchResults.hidden = true;
+    if (!event.target.closest(".mobile-search-section")) elements.mobileSearchResults.hidden = true;
   });
 
-  document.querySelector("#navToggle").addEventListener("click", () => openPanel("sidebar"));
-  document.querySelector("#inspectorToggle").addEventListener("click", () => openPanel("inspector"));
+  elements.navToggle.addEventListener("click", () => togglePanel("sidebar"));
+  elements.inspectorToggle.addEventListener("click", () => togglePanel("inspector"));
+  document.querySelector("#sidebarClose").addEventListener("click", closePanels);
+  document.querySelector("#buildSidebarClose").addEventListener("click", closePanels);
   document.querySelector("#inspectorClose").addEventListener("click", closePanels);
   document.querySelector("#buildInspectorClose").addEventListener("click", closePanels);
   elements.backdrop.addEventListener("click", closePanels);
@@ -506,14 +534,15 @@ function bindEvents() {
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 900) closePanels();
+    else syncPanelControls();
     if (appMode === "atlas") positionAtlas(false);
   });
 }
 
-function renderSearchResults() {
-  const query = elements.search.value.trim().toLowerCase();
+function renderSearchResultsFor(input, container) {
+  const query = input.value.trim().toLowerCase();
   if (!query) {
-    elements.searchResults.hidden = true;
+    container.hidden = true;
     return;
   }
 
@@ -521,7 +550,7 @@ function renderSearchResults() {
     .filter((node) => `${node.code} ${node.title} ${node.claim}`.toLowerCase().includes(query))
     .slice(0, 7);
 
-  elements.searchResults.innerHTML = matches.length
+  container.innerHTML = matches.length
     ? matches.map((node) => `
         <button class="search-result" type="button" data-search-id="${node.id}">
           <small>${escapeHtml(node.code)}</small>
@@ -529,13 +558,105 @@ function renderSearchResults() {
         </button>
       `).join("")
     : `<div class="search-result"><small>—</small><strong>没有匹配的知识节点</strong></div>`;
-  elements.searchResults.hidden = false;
+  container.hidden = false;
 }
 
 function chooseSearchResult(id) {
   elements.search.value = "";
+  elements.mobileSearch.value = "";
   elements.searchResults.hidden = true;
+  elements.mobileSearchResults.hidden = true;
   selectNode(id, true);
+}
+
+function beginViewportGesture(event) {
+  if (event.target.closest(".canvas-controls")) return;
+  if (event.pointerType === "mouse" && event.button !== 0) return;
+
+  const rect = elements.viewport.getBoundingClientRect();
+  activePointers.set(event.pointerId, { x: event.clientX - rect.left, y: event.clientY - rect.top });
+  gestureMoved = false;
+  elements.viewport.setPointerCapture(event.pointerId);
+  elements.viewport.classList.add("is-dragging");
+
+  if (activePointers.size === 1) {
+    isDragging = !event.target.closest(".knowledge-node");
+    dragOrigin = { x: event.clientX - pan.x, y: event.clientY - pan.y };
+    pinchOrigin = null;
+  } else if (activePointers.size === 2) {
+    isDragging = false;
+    beginPinchGesture();
+  }
+}
+
+function updateViewportGesture(event) {
+  if (!activePointers.has(event.pointerId)) return;
+  const rect = elements.viewport.getBoundingClientRect();
+  activePointers.set(event.pointerId, { x: event.clientX - rect.left, y: event.clientY - rect.top });
+
+  if (activePointers.size >= 2 && pinchOrigin) {
+    const [first, second] = [...activePointers.values()];
+    const center = midpoint(first, second);
+    const distance = pointDistance(first, second);
+    const minimumZoom = window.innerWidth <= 900 ? 0.22 : 0.35;
+    const nextZoom = clamp(pinchOrigin.zoom * (distance / pinchOrigin.distance), minimumZoom, 1.45);
+    pan.x = center.x - pinchOrigin.worldX * nextZoom;
+    pan.y = center.y - pinchOrigin.worldY * nextZoom;
+    zoom = nextZoom;
+    gestureMoved = true;
+    applyTransform();
+    return;
+  }
+
+  if (!isDragging) return;
+  pan.x = event.clientX - dragOrigin.x;
+  pan.y = event.clientY - dragOrigin.y;
+  gestureMoved = true;
+  applyTransform();
+}
+
+function endViewportGesture(event) {
+  if (!activePointers.has(event.pointerId)) return;
+  activePointers.delete(event.pointerId);
+  if (elements.viewport.hasPointerCapture(event.pointerId)) elements.viewport.releasePointerCapture(event.pointerId);
+
+  if (gestureMoved) {
+    suppressNextNodeClick = true;
+    window.setTimeout(() => { suppressNextNodeClick = false; }, 0);
+  }
+
+  if (activePointers.size === 1) {
+    const [remaining] = [...activePointers.values()];
+    const rect = elements.viewport.getBoundingClientRect();
+    isDragging = true;
+    dragOrigin = { x: remaining.x + rect.left - pan.x, y: remaining.y + rect.top - pan.y };
+    pinchOrigin = null;
+    return;
+  }
+
+  isDragging = false;
+  dragOrigin = null;
+  pinchOrigin = null;
+  elements.viewport.classList.remove("is-dragging");
+}
+
+function beginPinchGesture() {
+  const [first, second] = [...activePointers.values()];
+  const center = midpoint(first, second);
+  pinchOrigin = {
+    distance: Math.max(pointDistance(first, second), 1),
+    zoom,
+    worldX: (center.x - pan.x) / zoom,
+    worldY: (center.y - pan.y) / zoom
+  };
+}
+
+function midpoint(first, second) {
+  return { x: (first.x + second.x) / 2, y: (first.y + second.y) / 2 };
+}
+
+function pointDistance(first, second) {
+  return Math.hypot(second.x - first.x, second.y - first.y);
 }
 
 function setZoom(nextZoom) {
@@ -583,11 +704,22 @@ function applyTransform() {
 
 function openPanel(panel) {
   closePanels();
-  const target = appMode === "build"
-    ? panel === "sidebar" ? elements.buildSidebar : elements.buildInspector
-    : panel === "sidebar" ? elements.sidebar : elements.inspector;
+  const target = getPanelTarget(panel);
   target.classList.add("is-open");
   elements.backdrop.classList.add("is-visible");
+  syncPanelControls();
+}
+
+function togglePanel(panel) {
+  const target = getPanelTarget(panel);
+  if (target.classList.contains("is-open")) closePanels();
+  else openPanel(panel);
+}
+
+function getPanelTarget(panel) {
+  return appMode === "build"
+    ? panel === "sidebar" ? elements.buildSidebar : elements.buildInspector
+    : panel === "sidebar" ? elements.sidebar : elements.inspector;
 }
 
 function closePanels() {
@@ -596,6 +728,33 @@ function closePanels() {
   elements.buildSidebar.classList.remove("is-open");
   elements.buildInspector.classList.remove("is-open");
   elements.backdrop.classList.remove("is-visible");
+  syncPanelControls();
+}
+
+function syncPanelControls() {
+  const sidebarOpen = getPanelTarget("sidebar").classList.contains("is-open");
+  const inspectorOpen = getPanelTarget("inspector").classList.contains("is-open");
+  const atlasActive = appMode === "atlas";
+  elements.navToggle.setAttribute("aria-expanded", String(sidebarOpen));
+  elements.navToggle.setAttribute("aria-label", sidebarOpen
+    ? atlasActive ? "关闭筛选面板" : "关闭建造路线"
+    : atlasActive ? "打开筛选面板" : "打开建造路线");
+  elements.inspectorToggle.setAttribute("aria-expanded", String(inspectorOpen));
+  elements.inspectorToggle.setAttribute("aria-label", inspectorOpen
+    ? atlasActive ? "关闭节点详情" : "关闭挑战详情"
+    : atlasActive ? "打开节点详情" : "打开挑战详情");
+
+  const mobile = window.innerWidth <= 900;
+  [elements.sidebar, elements.inspector, elements.buildSidebar, elements.buildInspector].forEach((panel) => {
+    if (mobile) {
+      const open = panel.classList.contains("is-open");
+      panel.inert = !open;
+      panel.setAttribute("aria-hidden", String(!open));
+    } else {
+      panel.inert = false;
+      panel.removeAttribute("aria-hidden");
+    }
+  });
 }
 
 function setAppMode(mode, announce = true) {
@@ -614,13 +773,84 @@ function setAppMode(mode, announce = true) {
     button.setAttribute("aria-selected", String(active));
   });
 
-  document.querySelector("#navToggle").setAttribute("aria-label", atlasActive ? "打开筛选面板" : "打开建造路线");
-  document.querySelector("#inspectorToggle").setAttribute("aria-label", atlasActive ? "打开节点详情" : "打开挑战详情");
+  elements.navToggle.setAttribute("aria-label", atlasActive ? "打开筛选面板" : "打开建造路线");
+  elements.navToggle.setAttribute("aria-controls", atlasActive ? "sidebar" : "buildSidebar");
+  elements.inspectorToggle.setAttribute("aria-label", atlasActive ? "打开节点详情" : "打开挑战详情");
+  elements.inspectorToggle.setAttribute("aria-controls", atlasActive ? "inspector" : "buildInspector");
   elements.searchResults.hidden = true;
   closePanels();
 
   if (!atlasActive) buildController?.onActivated();
   if (announce && atlasActive) elements.viewport.focus({ preventScroll: true });
+}
+
+function setupInstallExperience() {
+  const standalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  document.documentElement.classList.toggle("is-standalone", standalone);
+  updateInstallButtons(standalone);
+
+  window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    installPrompt = event;
+    updateInstallButtons(false);
+  });
+
+  window.addEventListener("appinstalled", () => {
+    installPrompt = null;
+    updateInstallButtons(true);
+    showAppToast("知识大厦已经安装到这台设备。", false);
+  });
+
+  elements.installButtons.forEach((button) => button.addEventListener("click", promptAppInstall));
+}
+
+async function promptAppInstall() {
+  const standalone = window.matchMedia("(display-mode: standalone)").matches || window.navigator.standalone === true;
+  if (standalone) {
+    showAppToast("你已经在独立应用模式中使用知识大厦。", false);
+    return;
+  }
+
+  if (installPrompt) {
+    installPrompt.prompt();
+    await installPrompt.userChoice;
+    installPrompt = null;
+    return;
+  }
+
+  const isAppleMobile = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  showAppToast(
+    isAppleMobile
+      ? "在 Safari 中点“分享”，再选择“添加到主屏幕”。"
+      : "打开浏览器菜单，选择“安装应用”或“添加到主屏幕”。",
+    false
+  );
+}
+
+function updateInstallButtons(installed) {
+  elements.installButtons.forEach((button) => {
+    button.classList.toggle("is-installed", installed);
+    button.querySelector("strong").textContent = installed ? "已安装到这台设备" : "添加到手机桌面";
+    button.querySelector("i").textContent = installed ? "✓" : "＋";
+  });
+}
+
+function showAppToast(message, isError) {
+  window.clearTimeout(appToastTimer);
+  elements.appToast.textContent = message;
+  elements.appToast.classList.toggle("is-error", isError);
+  elements.appToast.classList.add("is-visible");
+  appToastTimer = window.setTimeout(() => elements.appToast.classList.remove("is-visible"), 3600);
+}
+
+async function registerServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+  try {
+    const registration = await navigator.serviceWorker.register("./service-worker.js");
+    registration.update();
+  } catch {
+    // The app remains fully usable online when service workers are unavailable.
+  }
 }
 
 function clamp(value, minimum, maximum) {
